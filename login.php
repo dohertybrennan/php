@@ -5,9 +5,9 @@
     <title>Login Page</title>
   </head>
   <body>
-    <form method="get" action="">
-      <input type="text" name="first" value="First" placeholder="First Name"><br />
-      <input type="text" name="last" value="Last" placeholder="Last Name"><br />
+    <form method="post" action="">
+      <input type="text" name="first" placeholder="First Name"><br />
+      <input type="text" name="last" placeholder="Last Name"><br />
       <input type="submit" name="submit" value="Go! Go! Power Rangers!">
     </form>
   </body>
