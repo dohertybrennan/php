@@ -8,6 +8,7 @@
     <form method="get" action="">
       <input type="text" name="first"><br />
       <input type="text" name="last">
+      <input type="button" name="submit" value="Submit">
     </form>
   </body>
 </html>
