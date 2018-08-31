@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -25,7 +26,7 @@
         }
       }
 
-      echo "Logged in as: $username";
+      echo "Logged in as: $_SESSION['username']";
     ?>
 
   </body>
