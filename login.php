@@ -19,10 +19,13 @@
 
     <?php
       if (isset($username) || isset($password)) {
-        echo "Username was $username";
-        echo "<br />";
-        echo "Password was $password";
+        if ($username == "Brennan" && $password == "password") {
+          $_SESSION['username'] = $username;
+
+        }
       }
+
+      echo "Logged in as: $username";
     ?>
 
   </body>
