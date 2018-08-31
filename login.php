@@ -6,8 +6,8 @@
   </head>
 
   <?php
-    $username = $_GET['username'];
-    $password = $_GET['password'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
   ?>
 
   <body>
@@ -18,9 +18,11 @@
     </form>
 
     <?php
-      echo "Username was $username";
-      echo "<br />";
-      echo "Password was $password";
+      if (isset($username) || isset($password)) {
+        echo "Username was $username";
+        echo "<br />";
+        echo "Password was $password";
+      }
     ?>
 
   </body>
