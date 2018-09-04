@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -9,6 +9,10 @@
   <?php
     $username = $_POST['username'];
     $password = $_POST['password'];
+
+    if (isset($_POST['logout'])) {
+      unset($_SESSION['username']);
+    }
   ?>
 
   <body>
@@ -16,6 +20,8 @@
       <input type="text" name="username" placeholder="Username"><br />
       <input type="password" name="password"><br />
       <input type="submit" name="submit" value="Go! Go! Power Rangers!">
+      <br>
+      <input type="submit" name="logout" value="logout">
     </form>
 
     <?php
