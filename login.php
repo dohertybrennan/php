@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php
+  session_start();
+  require('dbconnection.php');
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
