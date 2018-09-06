@@ -13,7 +13,7 @@
     $result = $conn->query($sql);
 
     //Extracting the returned query information
-    while ($row as $result->fetch_assoc()) {
+    while ($row = $result->fetch_assoc()) {
       if ($username == $row['username'] && $password == $row['password']) {
         $_SESSION['username'] = $username;
       }
