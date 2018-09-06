@@ -5,9 +5,20 @@
   if (isset($_POST(['username']))) {
     $username = $_POST['username'];
     $password = $_POST['password'];
-  }
 
-  $sql = "SELECT username, password FROM users WHERE username = $username";
+    //SQL statment to execute
+    $sql = "SELECT username, password FROM users WHERE username = $username";
+
+    //Execute the SQL and return an array to $result
+    $result = $conn->query($sql);
+
+    //Extracting the returned query information
+    while ($row as $result->fetch_assoc()) {
+      if ($username == $row['username'] && $password == $row['password']) {
+        $_SESSION['username'] = $username;
+      }
+    }
+  }
 
 ?>
 <!DOCTYPE html>
@@ -34,13 +45,6 @@
     </form>
 
     <?php
-      if (isset($username) || isset($password)) {
-        if ($username == "brennan" && $password == "password") {
-          $_SESSION['username'] = $username;
-
-        }
-      }
-
       echo "Logged in as: " . $_SESSION['username'];
     ?>
 
