@@ -2,6 +2,13 @@
   session_start();
   require('dbconnection.php');
 
+  if (isset($_POST(['username']))) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+  }
+
+  $sql = "SELECT username, password FROM users WHERE username = $username";
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -11,8 +18,6 @@
   </head>
 
   <?php
-    $username = $_POST['username'];
-    $password = $_POST['password'];
 
     if (isset($_POST['logout'])) {
       unset($_SESSION['username']);
@@ -30,7 +35,7 @@
 
     <?php
       if (isset($username) || isset($password)) {
-        if ($username == "Brennan" && $password == "password") {
+        if ($username == "brennan" && $password == "password") {
           $_SESSION['username'] = $username;
 
         }
