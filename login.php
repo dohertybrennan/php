@@ -7,7 +7,7 @@
     $password = $_POST['password'];
 
     //SQL statment to execute
-    $sql = "SELECT username, password FROM users WHERE username = $username";
+    $sql = "SELECT username, password FROM users WHERE username = '$username'";
 
     //Execute the SQL and return an array to $result
     $result = $conn->query($sql);
@@ -29,7 +29,6 @@
   </head>
 
   <?php
-
     if (isset($_POST['logout'])) {
       unset($_SESSION['username']);
     }
@@ -43,10 +42,8 @@
       <br>
       <input type="submit" name="logout" value="logout">
     </form>
-
     <?php
       echo "Logged in as: " . $_SESSION['username'];
     ?>
-
   </body>
 </html>
