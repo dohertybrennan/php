@@ -14,7 +14,7 @@
 
     //Extracting the returned query information
     while ($row = $result->fetch_assoc()) {
-      if ($username == $row['username'] && pasword_verify($password, $row['password']) ) {
+      if ($username == $row['username'] && password_verify($password, $row['password']) ) {
         $_SESSION['username'] = $username;
       }
     }
