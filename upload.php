@@ -15,7 +15,16 @@
   if ($_FILES['upload'] != null) {
     $target_dir = "uploads/";
     $target_file = $target_dir.basename($_FILES['upload']['name']);
-    move_uploaded_file($_FILES['upload']['tmp_name'], $target_file);
+    $uploadVerification = true;
+
+    if (file_exists($target_file)) {
+      $uploadVerification = false;
+      $ret = "Sorry. File already exists!";
+    }
+
+    if ($uploadVerification) {
+      move_uploaded_file($_FILES['upload']['tmp_name'], $target_file);
+    }
   }
 ?>
 
@@ -25,3 +34,11 @@ Upload your file.
   <br>
   <input type="submit" name="submit">
 </form>
+
+<h5 style="color: red;">
+  <?php
+    if ($ret) {
+      echo($ret);
+    }
+  ?>
+</h5>
