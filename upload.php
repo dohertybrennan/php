@@ -22,6 +22,11 @@
       $ret = "Sorry. File already exists!";
     }
 
+    if ($_FILES['upload']['size'] > 2000000) {
+      $uploadVerification = false;
+      $ret = "Sorry. File is too big";
+    }
+
     if ($uploadVerification) {
       move_uploaded_file($_FILES['upload']['tmp_name'], $target_file);
     }
