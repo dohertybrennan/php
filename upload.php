@@ -12,7 +12,13 @@
   echo "<hr>";
   var_dump($_FILES['upload']);
 
-  if ($_FILES['upload'] != null) {
+  if (isset($_FILES['upload'])) {
+    //checks to see if uploads directory exists
+    if (!file_exists('uploads')) {
+      mkdir('uploads/');
+    }
+    //if upload directory does not exists, create it.
+    
     $target_dir = "uploads/";
     $target_file = $target_dir.basename($_FILES['upload']['name']);
     $uploadVerification = true;
