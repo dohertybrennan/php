@@ -22,7 +22,7 @@
       mkdir("uploads/" . $_SESSION['username']);
     }
 
-    $target_dir = "uploads/" . $_SESSION['username'];
+    $target_dir = "uploads/" . $_SESSION['username'] . "/";
     $target_file = $target_dir.basename($_FILES['upload']['name']);
     $uploadVerification = true;
 
