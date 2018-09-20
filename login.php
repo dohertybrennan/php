@@ -42,6 +42,12 @@
       } else {
         echo " ";
       }
+
+      if (isset($_SESSION['username'])) {
+        echo "<a href='users.php'> | Upload</a>";
+      } else {
+        echo " ";
+      }
     ?>
     <br>
 
