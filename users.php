@@ -41,7 +41,7 @@
             //Loop through all table records
             while ($row = $result->fetch_assoc()) {
                 echo("<tr>");
-                    echo("<td>". $row['userid'] ."</td");
+                    echo("<td>". $row['user_id'] ."</td");
                     echo("<td>". $row['username'] ."</td");
                     echo("<td>". $row['password'] ."</td");
                 echo("</tr>");
