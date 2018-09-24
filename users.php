@@ -55,7 +55,7 @@
                                 <input name=\"id\" type=\"hidden\" value=\"" . $row['user_id'] . "\">
                                 <input type=\"submit\" value=\"delete\" name=\"delete\">
                             </form>
-                        </td>"
+                        </td>";
                 echo("</tr>");
             }
         ?>
