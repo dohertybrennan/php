@@ -44,7 +44,7 @@
       }
 
       if (isset($_SESSION['username'])) {
-        echo "<a href='users.php'> | Upload</a>";
+        echo "<a href='users.php'> | Users</a>";
       } else {
         echo " ";
       }

@@ -12,6 +12,12 @@
     //Bring in the database connection
     require('dbconnection.php');
 
+    if (isset($_POST['id']) && isset($_POST['delete'])) {
+        $user_id = $_POST['user_id'];
+        $sql="DELETE FROM users where userid = ". $user_id;
+        $result = $conn->query($sql);
+    }
+
     //Create the SQL query
     $sql = "SELECT * FROM users";
 
@@ -44,6 +50,12 @@
                     echo("<td>". $row['user_id'] ."</td>");
                     echo("<td>". $row['username'] ."</td>");
                     echo("<td>". $row['password'] ."</td>");
+                    echo"<td>
+                            <form action=\"\" method=\"post\">
+                                <input name=\"id\" type=\"hidden\" value=\"" . $row['user_id'] . "\">
+                                <input type=\"submit\" value=\"delete\" name=\"delete\">
+                            </form>
+                        </td>"
                 echo("</tr>");
             }
         ?>
