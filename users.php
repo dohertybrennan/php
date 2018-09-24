@@ -14,7 +14,7 @@
 
     if (isset($_POST['id']) && isset($_POST['delete'])) {
         $user_id = $_POST['user_id'];
-        $sql="DELETE FROM users where userid = ". $user_id;
+        $sql="DELETE FROM users where user_id = ". $user_id;
         $result = $conn->query($sql);
     }
 
