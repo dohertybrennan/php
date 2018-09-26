@@ -23,12 +23,12 @@
             echo "<input type=\"text\" value='" . $row['password'] . "' name='password'>";
         }
 
-        echo "<button type=\"submit\" value=\"Save Changes\" name=\"submit\">";
+        echo "<input type=\"submit\" value=\"Save Changes\" name=\"save\">";
 
-        /*if (isset($_POST['submit'])) {
+        if (isset($_POST['save'])) {
             $sql = "UPDATE users SET username = \" $_POST['username']\", password = \" $_POST['password'] \" WHERE user_id = $_POST['id']";
             $result = $conn->query($sql);
-        }*/
+        }
 
     } else {
         echo "Thall shall not pass!";
