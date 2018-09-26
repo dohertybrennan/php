@@ -25,11 +25,11 @@
 
         echo "<button type=\"submit\" value=\"Save Changes\" name=\"submit\">";
 
-        if (isset($_POST['submit'])) {
+        /*if (isset($_POST['submit'])) {
             $sql = "UPDATE users SET username = \" $_POST['username']\", password = \" $_POST['password'] \" WHERE user_id = $_POST['id']";
             $result = $conn->query($sql);
-        }
-        
+        }*/
+
     } else {
         echo "Thall shall not pass!";
 
