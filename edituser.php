@@ -9,9 +9,9 @@
         header('Location: login.php');
     }
 
-    if (isset($_POST['id']) && $_POST['edit'] == 'edit') {
+    if (isset($_POST['id']) && $_POST['edit'] == 'Edit') {
         require('dbconnection.php');
-        $sql = "SELECT * FROM users WHERE user_id = ". $_GET['id'];
+        $sql = "SELECT * FROM users WHERE user_id = ". $_POST['id'];
         $result = $conn->query($sql);
 
         echo "<form action=\"\" method=\"post\">";
