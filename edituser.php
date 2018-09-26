@@ -9,7 +9,7 @@
         header('Location: login.php');
     }
 
-    if (isset($_GET['id']) && $GET['edit'] == 'edit') {
+    if (isset($_POST['id']) && $_POST['edit'] == 'edit') {
         require('dbconnection.php');
         $sql = "SELECT * FROM users WHERE user_id = ". $_GET['id'];
         $result = $conn->query($sql);
