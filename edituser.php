@@ -17,9 +17,9 @@
         echo "<form action=\"\" method=\"post\">";
 
         while ($row = $result->fetch_assoc()) {
-            echo "<input type=\"text\" disabled value" . $row['user_id'] . ">";
-            echo "<input type=\"text\" value" . $row['user_id'] . ">";
-            echo "<input type=\"text\" value" . $row['password'] . ">";
+            echo "<input type=\"text\" disabled value='" . $row['user_id'] . "'><br>";
+            echo "<input type=\"text\" value='" . $row['user_id'] . "'><br>";
+            echo "<input type=\"text\" value='" . $row['password'] . "'>";
         }
 
     } else {
