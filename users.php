@@ -51,6 +51,12 @@
                     echo("<td>". $row['username'] ."</td>");
                     echo("<td>". $row['password'] ."</td>");
                     echo"<td>
+                            <form action=\"editusers.php\" method=\"post\">
+                                <input name=\"id\" type=\"hidden\" value=\"" . $row['user_id'] . "\">
+                                <input type=\"submit\" value=\"Edit\" name=\"edit\">
+                            </form>
+                        </td>";
+                    echo"<td>
                             <form action=\"\" method=\"post\">
                                 <input name=\"id\" type=\"hidden\" value=\"" . $row['user_id'] . "\">
                                 <input type=\"submit\" value=\"delete\" name=\"delete\">
