@@ -25,8 +25,14 @@
 
         echo "<input type=\"submit\" value=\"Save Changes\" name=\"save\">";
 
-        if (isset($_POST['save'])) {
-            $sql = "UPDATE users SET username = \" $_POST['username']\", password = \" $_POST['password'] \" WHERE user_id = $_POST['id']";
+        if (isset($_POST['username']) && $_POST['save'] == "Save Changes") {
+            $sql = "UPDATE users SET username = \" $_POST['username']\" WHERE user_id = $_POST['id']";
+            $result = $conn->query($sql);
+        }
+
+        if (isset($_POST['password']) && $_POST['save'] == "Save Changes") {
+            $newPass = password_hash($_POST['password'], PASSWORD_BCRYPT);
+            $sql = "UPDATE users SET password = \" $newPass\" WHERE user_id = $_POST['id']";
             $result = $conn->query($sql);
         }
 
