@@ -21,9 +21,10 @@
             echo "<input type=\"text\" disabled value='" . $row['user_id'] . "' name='id'><br>";
             echo "<input type=\"text\" value='" . $row['username'] . "' name='username'><br>";
             echo "<input type=\"text\" value='" . $row['password'] . "' name='password'>";
+            echo "<input type=\"submit\" value=\"Save Changes\" name=\"save\">";
         }
 
-        echo "<input type=\"submit\" value=\"Save Changes\" name=\"save\">";
+        echo "</form>";
 
         if (isset($_POST['username']) && $_POST['save'] == "Save Changes") {
             $sql = "UPDATE users SET username = \" $_POST['username']\" WHERE user_id = $_POST['id']";
