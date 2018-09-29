@@ -9,6 +9,16 @@
         header('Location: login.php');
     }
 
+    if (isset($_POST['username']) && $_POST['save'] == "Save Changes") {
+        $sql = "UPDATE users SET username = \" $_POST['username']\" WHERE user_id = $_POST['id']";
+        $result = $conn->query($sql);
+    }
+
+    if (isset($_POST['password']) && $_POST['save'] == "Save Changes") {
+        $newPass = password_hash($_POST['password'], PASSWORD_BCRYPT);
+        $sql = "UPDATE users SET password = \" $newPass\" WHERE user_id = $_POST['id']";
+        $result = $conn->query($sql);
+    }
 
     if (isset($_POST['id']) && $_POST['edit'] == 'Edit') {
         require('dbconnection.php');
@@ -25,17 +35,6 @@
         }
 
         echo "</form>";
-
-        if (isset($_POST['username']) && $_POST['save'] == "Save Changes") {
-            $sql = "UPDATE users SET username = \" $_POST['username']\" WHERE user_id = $_POST['id']";
-            $result = $conn->query($sql);
-        }
-
-        if (isset($_POST['password']) && $_POST['save'] == "Save Changes") {
-            $newPass = password_hash($_POST['password'], PASSWORD_BCRYPT);
-            $sql = "UPDATE users SET password = \" $newPass\" WHERE user_id = $_POST['id']";
-            $result = $conn->query($sql);
-        }
 
     } else {
         echo "Thall shall not pass!";
