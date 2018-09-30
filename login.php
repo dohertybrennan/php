@@ -33,8 +33,7 @@
       unset($_SESSION['username']);
     }
   ?>
-
-  <body>
+<body>
     <a href="register.php">Register</a>
     <?php
       if (isset($_SESSION['username'])) {
@@ -50,6 +49,7 @@
       }
     ?>
     <br>
+  
 
 
 

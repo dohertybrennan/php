@@ -8,6 +8,18 @@
     header('Location: login.php');
   }
 
+  if (isset($_SESSION['username'])) {
+    echo "<a href='upload.php'> | Upload</a>";
+    } else {
+      echo " ";
+    }
+
+  if (isset($_SESSION['username'])) {
+    echo "<a href='users.php'> | Users</a>";
+    } else {
+      echo " ";
+    }
+
   var_dump($_POST['upload']);
   echo "<hr>";
   var_dump($_FILES['upload']);
