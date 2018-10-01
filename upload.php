@@ -10,7 +10,7 @@
 
   if (isset($_SESSION['username'])) {
     echo "<a href='login.php'> Login</a>";
-    echo "<a href='upload.php'> | Upload</a>";
+    echo "<a href='upload.php'> | Upload</a><br>";
     } else {
       echo " ";
     }

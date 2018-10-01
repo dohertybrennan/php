@@ -51,8 +51,6 @@
     <br>
   
 
-
-
     <form method="post" action="">
       <input type="text" name="username" placeholder="Username"><br />
       <input type="password" name="password"><br />
