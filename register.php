@@ -3,8 +3,14 @@
     require('dbconnection.php');
 
     $username = $_POST['username'];
+    $username = filter_var($username, FILTER_SANITIZE_STRING);
+    $username = trim($username);
+    $username = stripcslashes($username);
+    $username = str_replace(' ', '', $username);
+
     $password = $_POST['password'];
     $password = password_hash($password, PASSWORD_BCRYPT);
+
     $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
     $conn->query($sql);
   }
