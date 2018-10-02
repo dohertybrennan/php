@@ -9,17 +9,8 @@
   }
 
   if (isset($_SESSION['username'])) {
-    echo "<a href='login.php'> Login</a>";
-    echo "<a href='upload.php'> | Upload</a><br>";
-    } else {
-      echo " ";
-    }
-
-  if (isset($_SESSION['username'])) {
-    echo "<a href='users.php'> | Users</a>";
-    } else {
-      echo " ";
-    }
+    require('navbar.php');
+  }
 
   var_dump($_POST['upload']);
   echo "<hr>";
