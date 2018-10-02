@@ -7,6 +7,8 @@
         echo "<a href='login.php'>Login</a>";
     }
 
+    echo " | ";
+
     if (basename($_SERVER['PHP_SELF']) == "users.php") {
         echo "<a href='users.php'><strong>Users</strong></a>";
     } else {
