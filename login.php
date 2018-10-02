@@ -37,15 +37,7 @@
     <a href="register.php">Register</a>
     <?php
       if (isset($_SESSION['username'])) {
-        echo "<a href='upload.php'> | Upload</a>";
-      } else {
-        echo " ";
-      }
-
-      if (isset($_SESSION['username'])) {
-        echo "<a href='users.php'> | Users</a>";
-      } else {
-        echo " ";
+        require('navbar.php');
       }
     ?>
     <br>

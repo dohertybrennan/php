@@ -27,19 +27,10 @@
 ?>
 
 <?php
-      if (isset($_SESSION['username'])) {
-        echo "<a href='login.php'> Login</a>";
-        echo "<a href='upload.php'> | Upload</a>";
-      } else {
-        echo " ";
-      }
-
-      if (isset($_SESSION['username'])) {
-        echo "<a href='users.php'> | Users</a>";
-      } else {
-        echo " ";
-      }
-    ?>
+    if (isset($_SESSION['username'])) {
+        require('navbar.php');
+    }
+?>
 
 <!DOCTYPE html>
 <html>
