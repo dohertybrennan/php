@@ -1,5 +1,5 @@
 <?php
-    echo "<br>"
+    echo "<br>";
 
     if (basename($_SERVER['PHP_SELF']) == "users.php") {
         echo "<a href='users.php'><strong>Users</strong></a>";
