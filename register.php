@@ -5,8 +5,11 @@
     $username = $_POST['username'];
     $username = filter_var($username, FILTER_SANITIZE_STRING);
     $username = trim($username);
-    $username = stripcslashes($username);
-    $username = str_replace(' ', '', $username);
+    //$username = stripcslashes($username);
+    $username = str_replace("/", "", $username);
+    $username = str_replace("\\", "", $username);
+    $username = preg_replace("/\s+/", "", $username);
+    //$username = str_replace(' ', '', $username);
 
     $password = $_POST['password'];
     $password = password_hash($password, PASSWORD_BCRYPT);
