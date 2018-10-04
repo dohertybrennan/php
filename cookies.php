@@ -1,7 +1,7 @@
 <?php
-    /*$cookie_name = "user";
+    $cookie_name = "user";
     $cookie_value = "bob";
-    setcookie($cookie_name, $cookie_value, time()+(84600 * 30), "/");*/
+    setcookie($cookie_name, $cookie_value, time()+(84600 * 30), "/");
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +20,7 @@
             echo "You have been here before! Good to see you again!";
         } else {
             echo "This is your first time here! Welcome!";
+            setcookie($cookie_name, $cookie_value, time()+(84600 * 30), "/");
         }
     ?>
 </body>
