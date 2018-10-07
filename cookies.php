@@ -18,9 +18,12 @@
     <?php
         if (isset($_COOKIE['user'])) {
             echo "You have been here before! Good to see you again!";
+            echo "You have last been here $cookie_time";
+            $cookie_time = time();
         } else {
             echo "This is your first time here! Welcome!";
             setcookie($cookie_name, $cookie_value, time()+(84600 * 30), "/");
+            $cookie_time = time();
         }
     ?>
 </body>
