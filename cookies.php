@@ -1,7 +1,7 @@
 <?php
     $cookie_name = "user";
-    $cookie_value = "bob";
-    setcookie($cookie_name, $cookie_value, time()+(84600 * 30), "/");
+    $cookie_date = date("l jS \of F Y h:i:s A");
+    setcookie($cookie_name, $cookie_date, time()+(84600 * 30), "/");
 ?>
 
 <!DOCTYPE html>
@@ -18,12 +18,14 @@
     <?php
         if (isset($_COOKIE['user'])) {
             echo "You have been here before! Good to see you again!";
-            echo "You have last been here $cookie_time";
-            $cookie_time = time();
+            echo "You have last been here ". $_COOKIE[date("l jS \of F Y h:i:s A")];
+            setcookie($cookie_name, $cookie_date, time()+(84600 * 30), "/");
+
+            
         } else {
             echo "This is your first time here! Welcome!";
-            setcookie($cookie_name, $cookie_value, time()+(84600 * 30), "/");
-            $cookie_time = time();
+            setcookie($cookie_name, $cookie_date, time()+(84600 * 30), "/");
+            
         }
     ?>
 </body>
