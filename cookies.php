@@ -19,6 +19,11 @@
         if (isset($_COOKIE['user'])) {
             echo "You have been here before! Good to see you again! <br>";
             echo "You have last been here ". $_COOKIE['user'];
+            $currentDate = date("l jS \of F Y h:i:s A");
+            $timeDiff = date_diff($_COOKIE['user'], $currentDate);
+            $timeDiff->format('%s');
+            echo $timeDiff;
+
             setcookie($cookie_name, $cookie_date, time()+(84600 * 30), "/");
 
             
