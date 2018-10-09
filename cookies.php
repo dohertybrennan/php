@@ -24,7 +24,7 @@
             
             
             $currentTime = date_create();
-            $timeDiff = $currentTime - $_COOKIE[$cookie_seconds];
+            $timeDiff = $_COOKIE[$cookie_seconds] - $currentTime;
             echo "<br>You were last here " . $timeDiff . " seconds ago. <br>";
 
             setcookie($cookie_name, $cookie_date, time()+(84600 * 30), "/");
