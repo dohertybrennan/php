@@ -1,8 +1,9 @@
 <?php
     $cookie_name = "user";
-    $cookie_date = time();
+    $cookie_seconds = "cookieSeconds";
+    $cookie_date = date("l jS \of F Y h:i:s A");
     setcookie($cookie_name, $cookie_date, time()+(84600 * 30), "/");
-    setcookie("cookieSeconds", time() , time()+(84600 * 30), "/");
+    setcookie($cookie_seconds, time(), time()+(84600 * 30), "/");
 ?>
 
 <!DOCTYPE html>
@@ -23,11 +24,11 @@
             
             
             $currentTime = date_create();
-            $timeDiff = date_diff($_COOKIE['cookieSeconds'], $currentTime);
-            echo $timeDiff->s . "seconds";
-            echo $_COOKIE['cookieSeconds'];
-            setcookie($cookie_name, $cookie_date, time()+(84600 * 30), "/");
+            $timeDiff = $currentTime - $_COOKIE[$cookie_seconds];
+            echo "<br>You were last here " . $timeDiff . " seconds ago. <br>"
 
+            setcookie($cookie_name, $cookie_date, time()+(84600 * 30), "/");
+            setcookie($cookie_seconds, time(), time()+(84600 * 30), "/");
             
         } else {
             echo "This is your first time here! Welcome!";
