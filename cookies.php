@@ -26,27 +26,7 @@
             $currentTime = time();
             $timeDiff = $currentTime - $_COOKIE[$cookie_seconds];
             
-            $timeDiffSec = $timeDiff;
-            $timeDiffMin = 0;
-            $timeDiffHour = 0;
-            $timeDiffDay = 0;
-
-            while ($timeDiffSec > 59) {
-                $timeDiffSec = $timeDiffSec - 60;
-                $timeDiffMin++;
-            }
-
-            while ($timeDiffMin > 59 {
-                $timeDiffMin = $timeDiffMin - 60;
-                $timeDiffHour++;
-            }
-
-            while ($timeDiffHour > 23) {
-                $timeDiffHour = $timeDiffHour - 24;
-                $timeDiffDay++;
-            }
-            
-            echo "<br>You were last here " . $timeDiffDay . " days, " . $timeDiffHour . " hours, " . $timeDiffMin . " minutes and " . $timeDiffSec . " seconds ago. <br>";
+            echo "<br>You were last here " . $timeDiff . " seconds ago. <br>";
 
             setcookie($cookie_name, $cookie_date, time()+(84600 * 30), "/");
             setcookie($cookie_seconds, time(), time()+(84600 * 30), "/");
