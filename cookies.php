@@ -2,6 +2,7 @@
     $cookie_name = "user";
     $cookie_date = date("l jS \of F Y h:i:s A");
     setcookie($cookie_name, $cookie_date, time()+(84600 * 30), "/");
+    setcookie("cookieSeconds", date_create(), time()+(84600 * 30), "/");
 ?>
 
 <!DOCTYPE html>
@@ -20,12 +21,9 @@
             echo "You have been here before! Good to see you again! <br>";
             echo "You have last been here ". $_COOKIE['user'];
             
-            $cookie = json_decode( $_COOKIE[ "user" ] );
-            $expiry = $cookie->expiry;
-            echo "<br>" . "test" . $expiry;
-
+            
             $currentTime = date_create();
-            $timeDiff = date_diff($_COOKIE['user'], $currentDate);
+            $timeDiff = date_diff($_COOKIE['cookieSeconds'], $currentTime);
             $timeDiff->s . "seconds";
             echo $timeDiff;
 
