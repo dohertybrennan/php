@@ -19,7 +19,11 @@
         if (isset($_COOKIE['user'])) {
             echo "You have been here before! Good to see you again! <br>";
             echo "You have last been here ". $_COOKIE['user'];
-            $cookieTime = date_create($_COOKIE['user']);
+            
+            $cookie = json_decode( $_COOKIE[ "user" ] );
+            $expiry = $cookie->expiry;
+            echo "<br>" . $expiry;
+
             $currentTime = date_create();
             $timeDiff = date_diff($_COOKIE['user'], $currentDate);
             $timeDiff->s . "seconds";
