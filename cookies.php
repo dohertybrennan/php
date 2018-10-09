@@ -25,6 +25,7 @@
             $currentTime = date_create();
             $timeDiff = date_diff($_COOKIE['cookieSeconds'], $currentTime);
             echo $timeDiff->s . "seconds";
+            echo time();
             setcookie($cookie_name, $cookie_date, time()+(84600 * 30), "/");
 
             
