@@ -22,7 +22,7 @@
             
             $cookie = json_decode( $_COOKIE[ "user" ] );
             $expiry = $cookie->expiry;
-            echo "<br>" . $expiry;
+            echo "<br>" . "test" . $expiry;
 
             $currentTime = date_create();
             $timeDiff = date_diff($_COOKIE['user'], $currentDate);
