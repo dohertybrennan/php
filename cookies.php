@@ -1,7 +1,7 @@
 <?php
     $cookie_name = "user";
     $cookie_date = date("l jS \of F Y h:i:s A");
-    setcookie($cookie_name, $cookie_date, time()+(84600 * 30), "/");
+    setcookie($cookie_name, time(), time()+(84600 * 30), "/");
     setcookie("cookieSeconds", time(), time()+(84600 * 30), "/");
 ?>
 
