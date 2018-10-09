@@ -23,7 +23,7 @@
             echo "You have last been here ". $_COOKIE['user'];
             
             
-            $currentTime = date_create();
+            $currentTime = time();
             $timeDiff = $_COOKIE[$cookie_seconds] - $currentTime;
             echo "<br>You were last here " . $timeDiff . " seconds ago. <br>";
 
