@@ -14,9 +14,9 @@
     echo "<pre>" . $ls . "</pre>";
 
     if ($ls == NULL) {
-        echo "This directory does not exist";
-    } else {
-        echo "this directory does exist. Creating directory...";
+        echo "This directory does not exist. Creating directory...";
         shell_exec("mkdir" . $dir);
+    } else {
+        echo "this directory does exist.";
     }
 ?>
