@@ -10,6 +10,7 @@
     $dir = "test";
     $ls = shell_exec($dir);
     $fail = "ls: cannot access '$dir/': No such file or directory";
+    echo "<pre>" . $ls . "</pre>";
 
     if ($ls == $fail) {
         echo "This directory does not exist";
