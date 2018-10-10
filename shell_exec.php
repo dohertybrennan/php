@@ -13,7 +13,7 @@
     var_dump($ls);
     echo "<pre>" . $ls . "</pre>";
 
-    if ($ls == $fail) {
+    if ($ls == NULL) {
         echo "This directory does not exist";
     } else {
         echo "this directory does exist";
