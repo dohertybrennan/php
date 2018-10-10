@@ -8,15 +8,15 @@
     //Check to see if directory exists
 
     $dir = "test";
-    $ls = shell_exec($dir);
-    $fail = "ls: cannot access '$dir/': No such file or directory";
-    var_dump($ls);
-    echo "<pre>" . $ls . "</pre>";
 
-    if ($ls == NULL) {
+    if (file_exists($dir)) {
+        if (is_dir($dir)) {
+            echo "This directory exists.";
+        } else {
+            echo "This is a file.";
+        }
+    } else {
         echo "This directory does not exist. Creating directory...";
         shell_exec("mkdir " . $dir);
-    } else {
-        echo "this directory does exist.";
     }
 ?>
