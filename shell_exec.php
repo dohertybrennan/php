@@ -16,6 +16,7 @@
     if ($ls == NULL) {
         echo "This directory does not exist";
     } else {
-        echo "this directory does exist";
+        echo "this directory does exist. Creating directory...";
+        shell_exec("mkdir" . $dir);
     }
 ?>
