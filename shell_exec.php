@@ -40,6 +40,6 @@
     echo "<br><br>";
 
     $w = shell_exec("who");
-    $users = explode(" ", $w);
+    $users = explode(' ', $w);
     var_dump($users);
 ?>
