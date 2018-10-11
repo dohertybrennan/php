@@ -31,4 +31,8 @@
         echo "This directory does not exist. Creating directory...";
         shell_exec("mkdir " . $dir);
     }
+
+    echo "<br><br>";
+
+    var_dump(shell_exec('w'));
 ?>
