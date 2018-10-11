@@ -43,8 +43,9 @@
     $users = explode(')', $w);
     var_dump($users);
 
-    /*for ($i=0; $i < $user; $i++) { 
-        # code...
-    }*/
+    for ($i=0; $i < count($users); $i++) { 
+        $user = explode("pts", $users[i]);
+        echo $user[0];
+    }
     
 ?>
