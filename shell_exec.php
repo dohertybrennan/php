@@ -41,10 +41,10 @@
 
     $w = shell_exec("who");
     $users = explode(')', $w);
+    var_dump($users);
 
-    foreach ($users as $i) {
-        $user = explode("pts", $i);
-        echo $user;
-    }
+    /*for ($i=0; $i < $user; $i++) { 
+        # code...
+    }*/
     
 ?>
