@@ -12,6 +12,18 @@
     if (file_exists($dir)) {
         if (is_dir($dir)) {
             echo "This directory exists.";
+            
+            $files = array();
+
+            foreach (scandir($dir) as $file) {
+                if ('.' === $file) continue;
+                if ('..' === $file) continue;
+
+                $files[] = $file;
+                echo $file . "<br>";
+            }
+            
+
         } else {
             echo "This is a file.";
         }
