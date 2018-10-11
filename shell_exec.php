@@ -35,4 +35,5 @@
     echo "<br><br>";
 
     var_dump(shell_exec('w'));
+    var_dump(shell_exec('who'));
 ?>
