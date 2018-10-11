@@ -37,4 +37,9 @@
     var_dump(shell_exec('w'));
     echo "<br><br>";
     var_dump(shell_exec('who'));
+    echo "<br><br>";
+
+    $w = shell_exec("who");
+    $users = str_split($w, ' ');
+    var_dump($users);
 ?>
