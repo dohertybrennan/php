@@ -41,5 +41,10 @@
 
     $w = shell_exec("who");
     $users = explode(')', $w);
-    var_dump($users);
+
+    foreach ($users as $key => $value) {
+        $user = explode("pts", $value);
+        echo $user;
+    }
+    
 ?>
