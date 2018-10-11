@@ -39,7 +39,7 @@
     var_dump(shell_exec('who'));
     echo "<br><br>";
 
-    $w = shell_exec("w");
-    $users = explode(' ', $w);
+    $w = shell_exec("who");
+    $users = explode(') ', $w);
     var_dump($users);
 ?>
