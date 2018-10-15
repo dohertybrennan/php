@@ -44,7 +44,7 @@
     var_dump($users);
 
     for ($i=0; $i < count($users); $i++) { 
-        $user = explode("pts", $users[i]);
+        $user = explode("\t", $users[i]);
         var_dump($user);
     }
     
