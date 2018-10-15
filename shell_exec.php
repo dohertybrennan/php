@@ -44,7 +44,7 @@
     //var_dump($users);
 
     foreach ($users as $key => $value) {
-        if (key < 2) {
+        if ($key < 2) {
             continue;
         }
         $username = substr($value, 0, strpos($value, ' ');
