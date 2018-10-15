@@ -34,20 +34,20 @@
 
     echo "<br><br>";
 
-    var_dump(shell_exec('w'));
+    /*var_dump(shell_exec('w'));
     echo "<br><br>";
     var_dump(shell_exec('who'));
-    echo "<br><br>";
+    echo "<br><br>";*/
 
     $w = shell_exec("w");
     $users = explode("\n", $w);
-    var_dump($users);
+    //var_dump($users);
 
     foreach ($users as $key => $value) {
         if (key < 2) {
             continue;
         }
-        $username = substr($value, 0, strpos($value, ' '));
+        $username = substr($value, 0, strpos($value, ' ');
         echo $username . "<br>";
     }
     
