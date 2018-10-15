@@ -43,12 +43,12 @@
     $users = explode("\n", $w);
     var_dump($users);
 
-    for ($i=0; $i < count($users); $i++) { 
-        if (i < 2) {
+    foreach ($users as $key => $value) {
+        if (key < 2) {
             continue;
         }
-        //$user = substr($users[i], 0, strpos($users[i], " "));
-        echo $users[i];
+        $username = substr($value, 0, strpos($value, ' '));
+        echo $username . "<br>";
     }
     
 ?>
