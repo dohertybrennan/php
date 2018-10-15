@@ -40,7 +40,7 @@
     echo "<br><br>";
 
     $w = shell_exec("who");
-    $users = explode('\n', $w);
+    $users = explode("\n", $w);
     var_dump($users);
 
     for ($i=0; $i < count($users); $i++) { 
