@@ -39,12 +39,12 @@
     var_dump(shell_exec('who'));
     echo "<br><br>";
 
-    $w = shell_exec("who");
+    $w = shell_exec("w");
     $users = explode("\n", $w);
     var_dump($users);
 
     for ($i=0; $i < count($users); $i++) { 
-        $user = explode("\t", $users[i]);
+        $user = explode(" ", $users[i]);
         var_dump($user);
     }
     
