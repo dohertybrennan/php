@@ -44,8 +44,11 @@
     var_dump($users);
 
     for ($i=0; $i < count($users); $i++) { 
-        $user = explode(" ", $users[i]);
-        var_dump($user);
+        if (i < 2) {
+            continue;
+        }
+        $user = substr($users[i], 0, strpos($users[i], " "));
+        echo $user;
     }
     
 ?>
