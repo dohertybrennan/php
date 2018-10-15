@@ -47,7 +47,7 @@
         if (i < 2) {
             continue;
         }
-        $user = substr($users[i], 0, strpos($users[i], " "));
+        //$user = substr($users[i], 0, strpos($users[i], " "));
         echo $user;
     }
     
