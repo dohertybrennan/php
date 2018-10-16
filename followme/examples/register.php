@@ -14,7 +14,7 @@
     $password = $_POST['password'];
     $password = password_hash($password, PASSWORD_BCRYPT);
 
-    $sql = "INSERT INTO users (username, password) VALUES ('$username', '$password')";
+    $sql = "INSERT INTO fm_users (username, password) VALUES ('$username', '$password')";
     $conn->query($sql);
   }
 ?>
