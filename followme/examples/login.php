@@ -21,7 +21,7 @@
     if ($row['username'] == $username && $row['password'] == $password) {
         header('Location: profile.html');    
     } else {
-        echo "<script>alert(\"This is an invalid login. This incident will be reported.\")</script>";
+        $invalidLogin = "This is an invalid login. This incident will be reported.";
         //$invalidLogin = "This username/password combo is invalid.";
     }
   }
@@ -54,6 +54,11 @@
 
 </head>
 <body>
+    <?php
+        if (isset($invalidLogin)) {
+            echo "<script>alert(" . $invalidLogin . ");</script>";
+        }
+    ?>
     <nav class="navbar navbar-expand-md fixed-top navbar-transparent">
         <div class="container">
 			<div class="navbar-translate">
