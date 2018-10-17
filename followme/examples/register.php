@@ -17,7 +17,7 @@
     $sql = "INSERT INTO fm_users (username, password) VALUES ('$username', '$password')";
     $conn->query($sql);
 
-    header('landing.html');
+    header('Location: landing.html');
   }
 ?>
 
