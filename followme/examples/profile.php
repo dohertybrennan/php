@@ -1,3 +1,8 @@
+<?php
+//Start session 
+//Uses $_SESSION['email'] to display email in navbar
+
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -39,6 +44,13 @@
 	            <ul class="navbar-nav ml-auto">
 	                <li class="nav-item">
 	                    <a href="login.php" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+	                    <a href="#" class="nav-link">
+                            <?php 
+                                echo $_SESSION['email'];
+                            ?>
+                        </a>
 	                </li>
 	            </ul>
 	        </div>
@@ -53,11 +65,11 @@
             <div class="container">
                 <div class="owner">
                     <div class="avatar">
-                        <img src="../assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                        <img src="../assets/img/faces/tims.jpeg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                     </div>
                     <div class="name">
-                        <h4 class="title">Jane Faker<br /></h4>
-						<h6 class="description">Music Producer</h6>
+                        <h4 class="title">My Timberlands<br /></h4>
+						<h6 class="description">My Fav Boots</h6>
                     </div>
                 </div>
                 <div class="row">
