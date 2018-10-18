@@ -12,7 +12,7 @@
     //$username = str_replace(' ', '', $username);
 
     $password = $_POST['password'];
-    $password = password_hash($password, PASSWORD_BCRYPT);
+    //$password = password_hash($password, PASSWORD_BCRYPT);
 
     $invalidLogin = "";
 
