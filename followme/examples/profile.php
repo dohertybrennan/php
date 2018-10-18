@@ -1,6 +1,8 @@
 <?php
 //Start session 
 //Uses $_SESSION['email'] to display email in navbar
+//Include image url. load in $_SESSION['img_url']
+//Need to create $_SESSION['first_name'] and $_SESSION['last_name']
 
 ?>
 <!doctype html>
@@ -65,10 +67,10 @@
             <div class="container">
                 <div class="owner">
                     <div class="avatar">
-                        <img src="../assets/img/faces/tims.jpeg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                        <img src="<?php echo $_SESSION['img_url'];?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
                     </div>
                     <div class="name">
-                        <h4 class="title">My Timberlands<br /></h4>
+                        <h4 class="title"><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name']; ?><br /></h4>
 						<h6 class="description">My Fav Boots</h6>
                     </div>
                 </div>
