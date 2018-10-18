@@ -14,6 +14,8 @@
     $password = $_POST['password'];
     $password = password_hash($password, PASSWORD_BCRYPT);
 
+    $invalidLogin = "";
+
     $sql = "SELECT username, password FROM fm_users WHERE username = " . $username;
     $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) {
@@ -53,7 +55,7 @@
 	<link href="../assets/css/nucleo-icons.css" rel="stylesheet">
 
 </head>
-<body onload='invalidLogin()'>
+<body>
     <nav class="navbar navbar-expand-md fixed-top navbar-transparent">
         <div class="container">
 			<div class="navbar-translate">
@@ -125,6 +127,7 @@
 
                                     <label>Password</label>
                                     <input type="password" class="form-control" placeholder="Password" name="password">
+                                    <h3><?php echo $invalidLogin ?></h3>
                                     <button class="btn btn-danger btn-block btn-round" type="submit">Login</button>
                                 </form>
                                 <div class="forgot">
