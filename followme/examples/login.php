@@ -16,13 +16,13 @@
 
     $sql = "SELECT username, password FROM fm_users WHERE username = " . $username;
     $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
-
-    if ($row['username'] == $username && $row['password'] == $password) {
-        header('Location: profile.html');    
-    } else {
-        $invalidLogin = "This is an invalid login. This incident will be reported.";
-        //$invalidLogin = "This username/password combo is invalid.";
+    while($row = $result->fetch_assoc()) {
+        if ($row['username'] == $username && password_verify($password, $row['password'])) {
+            header('Location: profile.html');    
+        } else {
+            $invalidLogin = "This is an invalid login. This incident will be reported.";
+            //$invalidLogin = "This username/password combo is invalid.";
+        }
     }
   }
 ?>
@@ -53,12 +53,7 @@
 	<link href="../assets/css/nucleo-icons.css" rel="stylesheet">
 
 </head>
-<body>
-    <?php
-        if (isset($invalidLogin)) {
-            echo "<script>alert(" . $invalidLogin . ");</script>";
-        }
-    ?>
+<body onload='invalidLogin()'>
     <nav class="navbar navbar-expand-md fixed-top navbar-transparent">
         <div class="container">
 			<div class="navbar-translate">
