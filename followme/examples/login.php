@@ -14,10 +14,11 @@
     $password = $_POST['password'];
     //$password = password_hash($password, PASSWORD_BCRYPT);
 
-    $invalidLogin = "";
+    $invalidLogin = "This is an invalid login. This incident will be reported.";
 
     $sql = "SELECT username, password FROM fm_users WHERE username = '$username'";
     $result = $conn->query($sql);
+
     while($row = $result->fetch_assoc()) {
         if ($row['username'] == $username && password_verify($password, $row['password'])) {
             header('Location: profile.html');    
