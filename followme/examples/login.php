@@ -16,7 +16,7 @@
 
     $invalidLogin = "";
 
-    $sql = "SELECT username, password FROM fm_users WHERE username = " . $username;
+    $sql = "SELECT username, password FROM fm_users WHERE username = '$username'";
     $result = $conn->query($sql);
     while($row = $result->fetch_assoc()) {
         if ($row['username'] == $username && password_verify($password, $row['password'])) {
