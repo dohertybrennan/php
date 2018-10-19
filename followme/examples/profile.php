@@ -3,6 +3,7 @@
 //Uses $_SESSION['email'] to display email in navbar
 //Include image url. load in $_SESSION['img_url']
 //Need to create $_SESSION['first_name'] and $_SESSION['last_name']
+//Modify fm_users to add title and descripton and add them in the $_SESSION.
 
 ?>
 <!doctype html>
@@ -71,12 +72,12 @@
                     </div>
                     <div class="name">
                         <h4 class="title"><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name']; ?><br /></h4>
-						<h6 class="description">My Fav Boots</h6>
+						<h6 class="description"><?php echo $_SESSION['title']; ?></h6>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 ml-auto mr-auto text-center">
-                        <p>An artist of considerable range, Jane Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+                        <p><?php echo $_SESSION['description']; ?> </p>
                         <br />
                         <btn class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</btn>
                     </div>
