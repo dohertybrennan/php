@@ -4,21 +4,9 @@
 //Include image url. load in $_SESSION['img_url']
 //Need to create $_SESSION['first_name'] and $_SESSION['last_name']
 //Modify fm_users to add title and descripton and add them in the $_SESSION.
-if (isset($_SESSION['username'])) {
-    require('../../example/dbconnection.php');
 
-    $username = $_SESSION['username'];
-    $sql = "SELECT username, img_url, first_name, last_name, title, description FROM fm_users WHERE username = '$username'";
-    $result = $conn->query($sql);
-
-    while ($row = $result->fetch_assoc()) {
-        $_SESSION['username'] = $username;
-        $_SESSION['img_url'] = $row['img_url'];
-        $_SESSION['first_name'] = $row['first_name'];
-        $_SESSION['last_name'] = $row['last_name'];
-        $_SESSION['title'] = $row['title'];
-        $_SESSION['description'] = $row['description'];
-    }
+if (!isset($_SESSION)) {
+    session_start();
 }
 
 

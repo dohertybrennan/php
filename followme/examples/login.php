@@ -17,12 +17,17 @@
 
     $invalidLogin = "This is an invalid login. This incident will be reported.";
 
-    $sql = "SELECT username, password FROM fm_users WHERE username = '$username'";
+    $sql = "SELECT username, password, img_url, first_name, last_name, title, description FROM fm_users WHERE username = '$username'";
     $result = $conn->query($sql);
 
     while($row = $result->fetch_assoc()) {
         if ($row['username'] == $username && password_verify($password, $row['password'])) {
             $_SESSION['username'] = $username;
+            $_SESSION['img_url'] = $row['img_url'];
+            $_SESSION['first_name'] = $row['first_name'];
+            $_SESSION['last_name'] = $row['last_name'];
+            $_SESSION['title'] = $row['title'];
+            $_SESSION['description'] = $row['description'];
             header('Location: profile.php');    
         } else {
             $invalidLogin = "This is an invalid login. This incident will be reported.";
