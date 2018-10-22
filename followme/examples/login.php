@@ -21,7 +21,7 @@
 
     while($row = $result->fetch_assoc()) {
         if ($row['username'] == $username && password_verify($password, $row['password'])) {
-            header('Location: profile.html');    
+            header('Location: profile.php');    
         } else {
             $invalidLogin = "This is an invalid login. This incident will be reported.";
             //$invalidLogin = "This username/password combo is invalid.";
