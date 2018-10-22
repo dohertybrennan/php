@@ -1,5 +1,6 @@
 <?php
   if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    session_start();
     require('../../example/dbconnection.php');
 
     $username = $_POST['username'];
@@ -21,6 +22,7 @@
 
     while($row = $result->fetch_assoc()) {
         if ($row['username'] == $username && password_verify($password, $row['password'])) {
+            $_SESSION['username'] = $username;
             header('Location: profile.php');    
         } else {
             $invalidLogin = "This is an invalid login. This incident will be reported.";
