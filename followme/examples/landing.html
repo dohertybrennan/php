@@ -34,15 +34,771 @@
 					<span class="navbar-toggler-bar"></span>
 					<span class="navbar-toggler-bar"></span>
 	            </button>
-			</div>
-	        <div class="collapse navbar-collapse" id="navbarToggler">
-	            <ul class="navbar-nav ml-auto">
-					<li class="nav-item">
-	                    <a href="../index.html" class="nav-link"><i class="nc-icon nc-layout-11"></i>Components</a>
-	                </li>
-	                <li class="nav-item">
-	                    <a href="../documentation/tutorial-components.html" target="_blank" class="nav-link"><i class="nc-icon nc-book-bookmark"></i>  Documentation</a>
-	                </li>
+			</div><div class="section profile-content">
+            <div class="container">
+                <div class="owner">
+                    <div class="avatar">
+                        <img src="<?php echo $_SESSION['img_url'];?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    </div>
+                    <div class="name">
+                        <h4 class="title"><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name']; ?><br /></h4>
+						<h6 class="description"><?php echo $_SESSION['title']; ?></h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <p><?php echo $_SESSION['description']; ?> </p>
+                        <br />
+                        <btn class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</btn>
+                    </div>
+                </div>
+                <br/>
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#follows" role="tab">Follows</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#following" role="tab">Following</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content following">
+                    <div class="tab-pane active" id="follows" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6 ml-auto mr-auto">
+                                <ul class="list-unstyled follows">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                                <img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4  ml-auto mr-auto">
+                                                <h6>Flume<br/><small>Musical Producer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2  ml-auto mr-auto">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="" checked>
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <hr />
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 ml-auto mr-auto ">
+                                                <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4">
+                                                <h6>Banks<br /><small>Singer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="">
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane text-center" id="following" role="tabpanel">
+                        <h3 class="text-muted">Not following anyone yet :(</h3>
+                        <button class="btn btn-warning btn-round">Find artists</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+	        <div c<div class="section profile-content">
+            <div class="container">
+                <div class="owner">
+                    <div class="avatar">
+                        <img src="<?php echo $_SESSION['img_url'];?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    </div>
+                    <div class="name">
+                        <h4 class="title"><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name']; ?><br /></h4>
+						<h6 class="description"><?php echo $_SESSION['title']; ?></h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <p><?php echo $_SESSION['description']; ?> </p>
+                        <br />
+                        <btn class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</btn>
+                    </div>
+                </div>
+                <br/>
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#follows" role="tab">Follows</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#following" role="tab">Following</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content following">
+                    <div class="tab-pane active" id="follows" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6 ml-auto mr-auto">
+                                <ul class="list-unstyled follows">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                                <img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4  ml-auto mr-auto">
+                                                <h6>Flume<br/><small>Musical Producer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2  ml-auto mr-auto">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="" checked>
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <hr />
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 ml-auto mr-auto ">
+                                                <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4">
+                                                <h6>Banks<br /><small>Singer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="">
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane text-center" id="following" role="tabpanel">
+                        <h3 class="text-muted">Not following anyone yet :(</h3>
+                        <button class="btn btn-warning btn-round">Find artists</button>
+                    </div>
+                </div>
+            </div>
+        </div>ass="collapse navbar-collapse" id="navbarToggler">
+	            <u<div class="section profile-content">
+            <div class="container">
+                <div class="owner">
+                    <div class="avatar">
+                        <img src="<?php echo $_SESSION['img_url'];?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    </div>
+                    <div class="name">
+                        <h4 class="title"><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name']; ?><br /></h4>
+						<h6 class="description"><?php echo $_SESSION['title']; ?></h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <p><?php echo $_SESSION['description']; ?> </p>
+                        <br />
+                        <btn class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</btn>
+                    </div>
+                </div>
+                <br/>
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#follows" role="tab">Follows</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#following" role="tab">Following</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content following">
+                    <div class="tab-pane active" id="follows" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6 ml-auto mr-auto">
+                                <ul class="list-unstyled follows">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                                <img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4  ml-auto mr-auto">
+                                                <h6>Flume<br/><small>Musical Producer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2  ml-auto mr-auto">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="" checked>
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <hr />
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 ml-auto mr-auto ">
+                                                <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4">
+                                                <h6>Banks<br /><small>Singer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="">
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane text-center" id="following" role="tabpanel">
+                        <h3 class="text-muted">Not following anyone yet :(</h3>
+                        <button class="btn btn-warning btn-round">Find artists</button>
+                    </div>
+                </div>
+            </div>
+        </div> class="navbar-nav ml-auto">
+				<div class="section profile-content">
+            <div class="container">
+                <div class="owner">
+                    <div class="avatar">
+                        <img src="<?php echo $_SESSION['img_url'];?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    </div>
+                    <div class="name">
+                        <h4 class="title"><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name']; ?><br /></h4>
+						<h6 class="description"><?php echo $_SESSION['title']; ?></h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <p><?php echo $_SESSION['description']; ?> </p>
+                        <br />
+                        <btn class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</btn>
+                    </div>
+                </div>
+                <br/>
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#follows" role="tab">Follows</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#following" role="tab">Following</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content following">
+                    <div class="tab-pane active" id="follows" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6 ml-auto mr-auto">
+                                <ul class="list-unstyled follows">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                                <img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4  ml-auto mr-auto">
+                                                <h6>Flume<br/><small>Musical Producer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2  ml-auto mr-auto">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="" checked>
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <hr />
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 ml-auto mr-auto ">
+                                                <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4">
+                                                <h6>Banks<br /><small>Singer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="">
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane text-center" id="following" role="tabpanel">
+                        <h3 class="text-muted">Not following anyone yet :(</h3>
+                        <button class="btn btn-warning btn-round">Find artists</button>
+                    </div>
+                </div>
+            </div>
+        </div><li class="nav-item">
+	              <div class="section profile-content">
+            <div class="container">
+                <div class="owner">
+                    <div class="avatar">
+                        <img src="<?php echo $_SESSION['img_url'];?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    </div>
+                    <div class="name">
+                        <h4 class="title"><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name']; ?><br /></h4>
+						<h6 class="description"><?php echo $_SESSION['title']; ?></h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <p><?php echo $_SESSION['description']; ?> </p>
+                        <br />
+                        <btn class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</btn>
+                    </div>
+                </div>
+                <br/>
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#follows" role="tab">Follows</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#following" role="tab">Following</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content following">
+                    <div class="tab-pane active" id="follows" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6 ml-auto mr-auto">
+                                <ul class="list-unstyled follows">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                                <img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4  ml-auto mr-auto">
+                                                <h6>Flume<br/><small>Musical Producer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2  ml-auto mr-auto">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="" checked>
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <hr />
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 ml-auto mr-auto ">
+                                                <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4">
+                                                <h6>Banks<br /><small>Singer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="">
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane text-center" id="following" role="tabpanel">
+                        <h3 class="text-muted">Not following anyone yet :(</h3>
+                        <button class="btn btn-warning btn-round">Find artists</button>
+                    </div>
+                </div>
+            </div>
+        </div>     <a href="../index.html" class="nav-link"><i class="nc-icon nc-layout-11"></i>Components</a>
+	              <div class="section profile-content">
+            <div class="container">
+                <div class="owner">
+                    <div class="avatar">
+                        <img src="<?php echo $_SESSION['img_url'];?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    </div>
+                    <div class="name">
+                        <h4 class="title"><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name']; ?><br /></h4>
+						<h6 class="description"><?php echo $_SESSION['title']; ?></h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <p><?php echo $_SESSION['description']; ?> </p>
+                        <br />
+                        <btn class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</btn>
+                    </div>
+                </div>
+                <br/>
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#follows" role="tab">Follows</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#following" role="tab">Following</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content following">
+                    <div class="tab-pane active" id="follows" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6 ml-auto mr-auto">
+                                <ul class="list-unstyled follows">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                                <img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4  ml-auto mr-auto">
+                                                <h6>Flume<br/><small>Musical Producer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2  ml-auto mr-auto">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="" checked>
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <hr />
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 ml-auto mr-auto ">
+                                                <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4">
+                                                <h6>Banks<br /><small>Singer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="">
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane text-center" id="following" role="tabpanel">
+                        <h3 class="text-muted">Not following anyone yet :(</h3>
+                        <button class="btn btn-warning btn-round">Find artists</button>
+                    </div>
+                </div>
+            </div>
+        </div> </li>
+	              <div class="section profile-content">
+            <div class="container">
+                <div class="owner">
+                    <div class="avatar">
+                        <img src="<?php echo $_SESSION['img_url'];?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    </div>
+                    <div class="name">
+                        <h4 class="title"><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name']; ?><br /></h4>
+						<h6 class="description"><?php echo $_SESSION['title']; ?></h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <p><?php echo $_SESSION['description']; ?> </p>
+                        <br />
+                        <btn class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</btn>
+                    </div>
+                </div>
+                <br/>
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#follows" role="tab">Follows</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#following" role="tab">Following</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content following">
+                    <div class="tab-pane active" id="follows" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6 ml-auto mr-auto">
+                                <ul class="list-unstyled follows">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                                <img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4  ml-auto mr-auto">
+                                                <h6>Flume<br/><small>Musical Producer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2  ml-auto mr-auto">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="" checked>
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <hr />
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 ml-auto mr-auto ">
+                                                <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4">
+                                                <h6>Banks<br /><small>Singer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="">
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane text-center" id="following" role="tabpanel">
+                        <h3 class="text-muted">Not following anyone yet :(</h3>
+                        <button class="btn btn-warning btn-round">Find artists</button>
+                    </div>
+                </div>
+            </div>
+        </div> <li class="nav-item">
+	              <div class="section profile-content">
+            <div class="container">
+                <div class="owner">
+                    <div class="avatar">
+                        <img src="<?php echo $_SESSION['img_url'];?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    </div>
+                    <div class="name">
+                        <h4 class="title"><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name']; ?><br /></h4>
+						<h6 class="description"><?php echo $_SESSION['title']; ?></h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <p><?php echo $_SESSION['description']; ?> </p>
+                        <br />
+                        <btn class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</btn>
+                    </div>
+                </div>
+                <br/>
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#follows" role="tab">Follows</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#following" role="tab">Following</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content following">
+                    <div class="tab-pane active" id="follows" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6 ml-auto mr-auto">
+                                <ul class="list-unstyled follows">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                                <img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4  ml-auto mr-auto">
+                                                <h6>Flume<br/><small>Musical Producer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2  ml-auto mr-auto">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="" checked>
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <hr />
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 ml-auto mr-auto ">
+                                                <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4">
+                                                <h6>Banks<br /><small>Singer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="">
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane text-center" id="following" role="tabpanel">
+                        <h3 class="text-muted">Not following anyone yet :(</h3>
+                        <button class="btn btn-warning btn-round">Find artists</button>
+                    </div>
+                </div>
+            </div>
+        </div>     <a href="../documentation/tutorial-components.html" target="_blank" class="nav-link"><i class="nc-icon nc-book-bookmark"></i>  Documentation</a>
+	              <div class="section profile-content">
+            <div class="container">
+                <div class="owner">
+                    <div class="avatar">
+                        <img src="<?php echo $_SESSION['img_url'];?>" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                    </div>
+                    <div class="name">
+                        <h4 class="title"><?php echo $_SESSION['first_name'] . " " . $_SESSION['last_name']; ?><br /></h4>
+						<h6 class="description"><?php echo $_SESSION['title']; ?></h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 ml-auto mr-auto text-center">
+                        <p><?php echo $_SESSION['description']; ?> </p>
+                        <br />
+                        <btn class="btn btn-outline-default btn-round"><i class="fa fa-cog"></i> Settings</btn>
+                    </div>
+                </div>
+                <br/>
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#follows" role="tab">Follows</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#following" role="tab">Following</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content following">
+                    <div class="tab-pane active" id="follows" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6 ml-auto mr-auto">
+                                <ul class="list-unstyled follows">
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 col-sm-2 ml-auto mr-auto">
+                                                <img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4  ml-auto mr-auto">
+                                                <h6>Flume<br/><small>Musical Producer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2  ml-auto mr-auto">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="" checked>
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <hr />
+                                    <li>
+                                        <div class="row">
+                                            <div class="col-md-2 ml-auto mr-auto ">
+                                                <img src="../assets/img/faces/ayo-ogunseinde-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+                                            </div>
+                                            <div class="col-md-7 col-sm-4">
+                                                <h6>Banks<br /><small>Singer</small></h6>
+                                            </div>
+                                            <div class="col-md-3 col-sm-2">
+												<div class="form-check">
+					                                <label class="form-check-label">
+					                                    <input class="form-check-input" type="checkbox" value="">
+					                                    <span class="form-check-sign"></span>
+					                                </label>
+					                            </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane text-center" id="following" role="tabpanel">
+                        <h3 class="text-muted">Not following anyone yet :(</h3>
+                        <button class="btn btn-warning btn-round">Find artists</button>
+                    </div>
+                </div>
+            </div>
+        </div> </li>
 					<li class="nav-item">
                         <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
                             <i class="fa fa-twitter"></i>
