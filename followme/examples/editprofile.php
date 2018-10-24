@@ -77,7 +77,16 @@ if (!isset($_SESSION)) {
                             <form class="contact-form">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label>Name</label>
+                                        <label>First Name:</label>
+										<div class="input-group">
+	                                        <span class="input-group-addon">
+	                                            <i class="nc-icon nc-single-02"></i>
+	                                        </span>
+	                                        <input type="text" class="form-control" placeholder="Name">
+	                                    </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label>Last Name:</label>
 										<div class="input-group">
 	                                        <span class="input-group-addon">
 	                                            <i class="nc-icon nc-single-02"></i>
@@ -95,11 +104,11 @@ if (!isset($_SESSION)) {
 										</div>
                                     </div>
                                 </div> <!--Ends first row-->
-                                <label>Message</label>
+                                <label>Description:</label>
                                 <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you..."></textarea>
                                 <div class="row">
-                                    <div class="col-md-4 ml-auto mr-auto">
-                                        <button class="btn btn-danger btn-lg btn-fill">Send Message</button>
+                                    <div class="col-md-4 ml-auto mr-auto text-center">
+                                        <button class="btn btn-danger btn-lg btn-fill">Save Changes</button>
                                     </div>
                                 </div>
                             </form>
