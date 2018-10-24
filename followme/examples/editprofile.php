@@ -103,6 +103,15 @@ if (!isset($_SESSION)) {
 											<input type="text" class="form-control" placeholder="Email">
 										</div>
                                     </div>
+                                    <div class="col-md-6">
+                                        <label>Title:</label>
+										<div class="input-group">
+											<span class="input-group-addon">
+												<!--<i class="nc-icon nc-email-85"></i>-->
+											</span>
+											<input type="text" class="form-control" placeholder="Title">
+										</div>
+                                    </div>
                                 </div> <!--Ends first row-->
                                 <label>Description:</label>
                                 <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you..."></textarea>
