@@ -10,6 +10,7 @@ if (!isset($_SESSION)) {
 }
 
 if (isset($_POST['submit'])) {
+    session_start();
     require('../../example/dbconnection.php');
 
     $username = $_POST['username'];
