@@ -103,7 +103,7 @@ if (!isset($_SESSION)) {
 	                                        <span class="input-group-addon">
 	                                            <i class="nc-icon nc-single-02"></i>
 	                                        </span>
-	                                        <input type="text" class="form-control" placeholder="First Name" value="<?php //echo $_SESSION['first_name']; ?>" name="first_name">
+	                                        <input type="text" class="form-control" placeholder="First Name" name="first_name">
 	                                    </div>
                                     </div>
                                     <div class="col-md-6">
@@ -112,7 +112,7 @@ if (!isset($_SESSION)) {
 	                                        <span class="input-group-addon">
 	                                            <i class="nc-icon nc-single-02"></i>
 	                                        </span>
-	                                        <input type="text" class="form-control" placeholder="Last Name" value="<?php //echo $_SESSION['last_name']; ?>" name="last_name">
+	                                        <input type="text" class="form-control" placeholder="Last Name" name="last_name">
 	                                    </div>
                                     </div>
                                     <div class="col-md-6">
@@ -121,7 +121,7 @@ if (!isset($_SESSION)) {
 											<span class="input-group-addon">
 												<i class="nc-icon nc-email-85"></i>
 											</span>
-											<input type="text" class="form-control" placeholder="Email" value="<?php //echo $_SESSION['username']; ?>" name="username">
+											<input type="text" class="form-control" placeholder="Email" name="username">
 										</div>
                                     </div>
                                     <div class="col-md-6">
