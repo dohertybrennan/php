@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <li class="nav-item">
 	                    <a href="#" class="nav-link">
                             <?php 
-                                echo $_SESSION['username'];
+                                //echo $_SESSION['username'];
                             ?>
                         </a>
 	                </li>
@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	                                        <span class="input-group-addon">
 	                                            <i class="nc-icon nc-single-02"></i>
 	                                        </span>
-	                                        <input type="text" class="form-control" placeholder="First Name" value="<?php echo $_SESSION['first_name']; ?>" name="first_name">
+	                                        <input type="text" class="form-control" placeholder="First Name" value="<?php //echo $_SESSION['first_name']; ?>" name="first_name">
 	                                    </div>
                                     </div>
                                     <div class="col-md-6">
@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	                                        <span class="input-group-addon">
 	                                            <i class="nc-icon nc-single-02"></i>
 	                                        </span>
-	                                        <input type="text" class="form-control" placeholder="Last Name" value="<?php echo $_SESSION['last_name']; ?>" name="last_name">
+	                                        <input type="text" class="form-control" placeholder="Last Name" value="<?php //echo $_SESSION['last_name']; ?>" name="last_name">
 	                                    </div>
                                     </div>
                                     <div class="col-md-6">
@@ -121,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 											<span class="input-group-addon">
 												<i class="nc-icon nc-email-85"></i>
 											</span>
-											<input type="text" class="form-control" placeholder="Email" value="<?php echo $_SESSION['username']; ?>" name="username">
+											<input type="text" class="form-control" placeholder="Email" value="<?php //echo $_SESSION['username']; ?>" name="username">
 										</div>
                                     </div>
                                     <div class="col-md-6">
@@ -130,12 +130,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 											<span class="input-group-addon">
 												<!--<i class="nc-icon nc-email-85"></i>-->
 											</span>
-											<input type="text" class="form-control" placeholder="Title" value="<?php echo $_SESSION['title']; ?>" name="title">
+											<input type="text" class="form-control" placeholder="Title" value="<?php //echo $_SESSION['title']; ?>" name="title">
 										</div>
                                     </div>
                                 </div> <!--Ends first row-->
                                 <label>Description:</label>
-                                <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you..." name="description"><?php echo $_SESSION['description'];?></textarea>
+                                <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you..." name="description"><?php //echo $_SESSION['description'];?></textarea>
                                 <div class="row">
                                     <div class="col-md-4 ml-auto mr-auto text-center">
                                         <button class="btn btn-danger btn-lg btn-fill" type="submit" name="submit">Save Changes</button>
