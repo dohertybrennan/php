@@ -10,7 +10,7 @@ if (!isset($_SESSION)) {
 }
 
 if (isset($_POST['submit'])) {
-   /* //require('../../example/dbconnection.php');
+   //require('../../example/dbconnection.php');
 
     $username = $_POST['username'];
     $username = filter_var($username, FILTER_SANITIZE_STRING);
@@ -27,8 +27,8 @@ if (isset($_POST['submit'])) {
     $_SESSION['description'] = $_POST['description'];
 
     $sql = "UPDATE fm_users SET username = \"$username\", first_name = \"$_POST['first_name']\", last_name = \"$_POST['last_name']\", title = \"$_POST['title']\", description = \"$_POST['description']\" where user_id = \"$_SESSION['user_id']\" ";
-    $conn->query($sql);
-    header('Location: profile.php');*/
+    //$conn->query($sql);
+    //header('Location: profile.php');
     echo "test";
 }
 
