@@ -28,6 +28,7 @@
             $_SESSION['last_name'] = $row['last_name'];
             $_SESSION['title'] = $row['title'];
             $_SESSION['description'] = $row['description'];
+            $_SESSION['user_id'] = $row['user_id'];
             header('Location: profile.php');    
         } else {
             $invalidLogin = "This is an invalid login. This incident will be reported.";

@@ -25,8 +25,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_SESSION['last_name'] = $_POST['last_name'];$conn->query($sql);
     $_SESSION['title'] = $_POST['title'];$conn->query($sql);
     $_SESSION['description'] = $_POST['description'];$conn->query($sql);
-$conn->query($sql);
-    $sql = "INSERT INTO fm_users (username, first_name,$conn->query($sql); last_name, title, description) values (\"$username\", \"$_POST['first_name']\", \"$_POST['last_name']\", \"$_POST['title']\", \"$_POST['description']\" )";
+
+    $conn->query($sql);
+    $sql = "UPDATE fm_users SET username = \"$username\", first_name = \"$_POST['first_name]\", last_name = \"$_POST['last_name']\", title = \"$_POST['title']\", description = \"$_POST['description']\" where user_id = \"$_SESSION['user_id']\" ";
     $conn->query($sql);
     header('Location: profile.php');
 }
