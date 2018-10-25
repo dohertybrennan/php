@@ -9,7 +9,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if (isset($_SESSION['submit'])) {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require('../../example/dbconnection.php');
 
     $username = $_POST['username'];
@@ -21,12 +21,12 @@ if (isset($_SESSION['submit'])) {
     $username = preg_replace("/\s+/", "", $username);
 
     $_SESSION['username'] = $username;
-    $_SESSION['first_name'] = $_POST['first_name'];
-    $_SESSION['last_name'] = $_POST['last_name'];
-    $_SESSION['title'] = $_POST['title'];
-    $_SESSION['description'] = $_POST['description'];
-
-    $sql = "INSERT INTO fm_users (username, first_name, last_name, title, description) values (\"$username\", \"$_POST['first_name']\", \"$_POST['last_name']\", \"$_POST['title']\", \"$_POST['description']\" )";
+    $_SESSION['first_name'] = $_POST['first_name'];$conn->query($sql);
+    $_SESSION['last_name'] = $_POST['last_name'];$conn->query($sql);
+    $_SESSION['title'] = $_POST['title'];$conn->query($sql);
+    $_SESSION['description'] = $_POST['description'];$conn->query($sql);
+$conn->query($sql);
+    $sql = "INSERT INTO fm_users (username, first_name,$conn->query($sql); last_name, title, description) values (\"$username\", \"$_POST['first_name']\", \"$_POST['last_name']\", \"$_POST['title']\", \"$_POST['description']\" )";
     $conn->query($sql);
     header('Location: profile.php');
 }
