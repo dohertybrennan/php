@@ -135,7 +135,7 @@
                                     </div>
                                 </div> <!--Ends first row-->
                                 <label>Description:</label>
-                                <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you..." name="description"><?php //echo $_SESSION['description'];?></textarea>
+                                <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you..." name="description"></textarea>
                                 <div class="row">
                                     <div class="col-md-4 ml-auto mr-auto text-center">
                                         <button class="btn btn-danger btn-lg btn-fill" type="submit" name="submit">Save Changes</button>
