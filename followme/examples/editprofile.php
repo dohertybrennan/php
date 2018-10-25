@@ -130,7 +130,7 @@ if (!isset($_SESSION)) {
 											<span class="input-group-addon">
 												<!--<i class="nc-icon nc-email-85"></i>-->
 											</span>
-											<input type="text" class="form-control" placeholder="Title" name="title" value=<?php echo $_SESSION['title'];?>>
+											<input type="text" class="form-control" placeholder="Title" name="title" value="<?php echo $_SESSION['title'];?>">
 										</div>
                                     </div>
                                 </div> <!--Ends first row-->
