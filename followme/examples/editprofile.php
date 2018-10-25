@@ -9,7 +9,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if (isset($_POST['submit'])) {
     require('../../example/dbconnection.php');
 
     $username = $_POST['username'];
