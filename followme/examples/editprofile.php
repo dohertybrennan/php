@@ -9,6 +9,27 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+if (isset($_SESSION['submit'])) {
+    require('../../example/dbconnection.php');
+
+    $username = $_POST['username'];
+    $username = filter_var($username, FILTER_SANITIZE_STRING);
+    $username = trim($username);
+    //$username = stripcslashes($username);
+    $username = str_replace("/", "", $username);
+    $username = str_replace("\\", "", $username);
+    $username = preg_replace("/\s+/", "", $username);
+
+    $_SESSION['username'] = $username;
+    $_SESSION['first_name'] = $_POST['first_name'];
+    $_SESSION['last_name'] = $_POST['last_name'];
+    $_SESSION['title'] = $_POST['title'];
+    $_SESSION['description'] = $_POST['description'];
+
+    $sql = "INSERT INTO fm_users (username, first_name, last_name, title, description) values (\"$username\", \"$_POST['first_name']\", \"$_POST['last_name']\", \"$_POST['title']\", \"$_POST['description']\" )";
+    $conn->query($sql);
+    header('Location: profile.php');
+}
 
 ?>
 <!doctype html>
@@ -74,7 +95,7 @@ if (!isset($_SESSION)) {
                     <div class="row">
                         <div class="col-md-8 ml-auto mr-auto">
                             <h2 class="text-center">Edit Profile</h2>
-                            <form class="contact-form">
+                            <form class="contact-form" action="" method="post">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>First Name:</label>
@@ -82,7 +103,7 @@ if (!isset($_SESSION)) {
 	                                        <span class="input-group-addon">
 	                                            <i class="nc-icon nc-single-02"></i>
 	                                        </span>
-	                                        <input type="text" class="form-control" placeholder="Name">
+	                                        <input type="text" class="form-control" placeholder="First Name" value="<?php echo $_SESSION['first_name']; ?>" name="first_name">
 	                                    </div>
                                     </div>
                                     <div class="col-md-6">
@@ -91,7 +112,7 @@ if (!isset($_SESSION)) {
 	                                        <span class="input-group-addon">
 	                                            <i class="nc-icon nc-single-02"></i>
 	                                        </span>
-	                                        <input type="text" class="form-control" placeholder="Name">
+	                                        <input type="text" class="form-control" placeholder="Last Name" value="<?php echo $_SESSION['last_name']; ?>" name="last_name">
 	                                    </div>
                                     </div>
                                     <div class="col-md-6">
@@ -100,7 +121,7 @@ if (!isset($_SESSION)) {
 											<span class="input-group-addon">
 												<i class="nc-icon nc-email-85"></i>
 											</span>
-											<input type="text" class="form-control" placeholder="Email">
+											<input type="text" class="form-control" placeholder="Email" value="<?php echo $_SESSION['username']; ?>" name="username">
 										</div>
                                     </div>
                                     <div class="col-md-6">
@@ -109,15 +130,15 @@ if (!isset($_SESSION)) {
 											<span class="input-group-addon">
 												<!--<i class="nc-icon nc-email-85"></i>-->
 											</span>
-											<input type="text" class="form-control" placeholder="Title">
+											<input type="text" class="form-control" placeholder="Title" value="<?php echo $_SESSION['title']; ?>" name="title">
 										</div>
                                     </div>
                                 </div> <!--Ends first row-->
                                 <label>Description:</label>
-                                <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you..."></textarea>
+                                <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you..." name="description"><?php echo $_SESSION['description'];?></textarea>
                                 <div class="row">
                                     <div class="col-md-4 ml-auto mr-auto text-center">
-                                        <button class="btn btn-danger btn-lg btn-fill">Save Changes</button>
+                                        <button class="btn btn-danger btn-lg btn-fill" type="submit" name="submit">Save Changes</button>
                                     </div>
                                 </div>
                             </form>
