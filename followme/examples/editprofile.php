@@ -28,8 +28,8 @@
 
     $conn->query($sql);
     $sql = "UPDATE fm_users SET username = \"$username\", first_name = \"$_POST['first_name]\", last_name = \"$_POST['last_name']\", title = \"$_POST['title']\", description = \"$_POST['description']\" where user_id = \"$_SESSION['user_id']\" ";
-    header('Location: profile.php');*/
-//}
+    header('Location: profile.php');
+}*/
 
 ?>
 <!doctype html>
@@ -76,7 +76,9 @@
                     </li>
                     <li class="nav-item">
 	                    <a href="#" class="nav-link">
-                            
+                            <?php 
+                                echo $_SESSION['username'];
+                            ?>
                         </a>
 	                </li>
 	            </ul>
@@ -133,7 +135,7 @@
                                     </div>
                                 </div> <!--Ends first row-->
                                 <label>Description:</label>
-                                <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you..." name="description"></textarea>
+                                <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you..." name="description"><?php //echo $_SESSION['description'];?></textarea>
                                 <div class="row">
                                     <div class="col-md-4 ml-auto mr-auto text-center">
                                         <button class="btn btn-danger btn-lg btn-fill" type="submit" name="submit">Save Changes</button>
