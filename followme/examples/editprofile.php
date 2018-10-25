@@ -21,14 +21,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = preg_replace("/\s+/", "", $username);
 
     $_SESSION['username'] = $username;
-    $_SESSION['first_name'] = $_POST['first_name'];$conn->query($sql);
-    $_SESSION['last_name'] = $_POST['last_name'];$conn->query($sql);
-    $_SESSION['title'] = $_POST['title'];$conn->query($sql);
-    $_SESSION['description'] = $_POST['description'];$conn->query($sql);
+    $_SESSION['first_name'] = $_POST['first_name'];
+    $_SESSION['last_name'] = $_POST['last_name'];
+    $_SESSION['title'] = $_POST['title'];
+    $_SESSION['description'] = $_POST['description'];
 
     $conn->query($sql);
     $sql = "UPDATE fm_users SET username = \"$username\", first_name = \"$_POST['first_name]\", last_name = \"$_POST['last_name']\", title = \"$_POST['title']\", description = \"$_POST['description']\" where user_id = \"$_SESSION['user_id']\" ";
-    $conn->query($sql);
     header('Location: profile.php');
 }
 
