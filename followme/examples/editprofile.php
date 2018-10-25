@@ -9,7 +9,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if (isset($_POST['submit'])) {
+if (!isset($_POST['submit'])) {
     session_start();
     require('../../example/dbconnection.php');
 
