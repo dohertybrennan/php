@@ -9,7 +9,7 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+/*if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require('../../example/dbconnection.php');
 
     $username = $_POST['username'];
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $conn->query($sql);
     $sql = "UPDATE fm_users SET username = \"$username\", first_name = \"$_POST['first_name]\", last_name = \"$_POST['last_name']\", title = \"$_POST['title']\", description = \"$_POST['description']\" where user_id = \"$_SESSION['user_id']\" ";
-    header('Location: profile.php');
+    header('Location: profile.php');*/
 }
 
 ?>
