@@ -5,9 +5,9 @@
 //Need to create $_SESSION['first_name'] and $_SESSION['last_name']
 //Modify fm_users to add title and descripton and add them in the $_SESSION.
 
-if (!isset($_SESSION)) {
+/*if (!isset($_SESSION)) {
     session_start();
-}
+}*/
 
 /*if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require('../../example/dbconnection.php');
