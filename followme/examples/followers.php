@@ -4,6 +4,10 @@
 //Set default values for each form element from $_SESSION
 //Update submitted values to database
 //Upldate submitted values to $_SESSION
+
+if (!isset($_SESSION)) {
+        session_start();
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -68,24 +72,40 @@
                         <div class="row">
                                 <div class="col-md-6 ml-auto mr-auto">
                                         <ul class="list-unstyled follows">
-                                                <li>
-                                                        <div class="row">
-                                                                <div class="col-md-2 col-sm-2 ml-auto mr-auto">
-                                                                        <img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
-                                                                </div>
-                                                                <div class="col-md-7 col-sm-4  ml-auto mr-auto">
-                                                                        <h6>Flume<br/><small>Musical Producer</small></h6>
-                                                                </div>
-                                                                <div class="col-md-3 col-sm-2  ml-auto mr-auto">
-                                                                        <div class="form-check">
-                                                                                <label class="form-check-label">
-                                                                                        <input class="form-check-input" type="checkbox" value="" checked>
-                                                                                        <span class="form-check-sign"></span>
-                                                                                </label>
+                                                <?php
+                                                require('../../example/dbconnection.php');
+                                                $self_id = $_SESSION['user_id'];
+
+                                                $sql = "SELECT * FROM fm_users WHERE user_id <> $self_id";
+                                                $result = $conn->query($sql);
+
+                                                while ($row = $result->fetch_assoc()) {
+                                                        $first_name = $row['first_name'];
+                                                        $last_name = $row['last_name'];
+                                                        $img_url = $row['img_url'];
+                                                        $title = $row['title'];
+
+                                                        echo "<li>
+                                                                <div class=\"row\">
+                                                                        <div class=\"col-md-2 col-sm-2 ml-auto mr-auto\">
+                                                                                <img src=\"$img_url\" alt=\"Circle Image\" class=\"img-circle img-no-padding img-responsive\">
+                                                                        </div>
+                                                                        <div class=\"col-md-7 col-sm-4  ml-auto mr-auto\">
+                                                                                <h6>$first_name $last_name<br/><small>$title</small></h6>
+                                                                        </div>
+                                                                        <div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">
+                                                                                <div class=\"form-check\">
+                                                                                        <label class=\"form-check-label\">
+                                                                                                <input class=\"form-check-input\" type=\"checkbox\" value=\"\">
+                                                                                                <span class=\"form-check-sign\"></span>
+                                                                                        </label>
+                                                                                </div>
                                                                         </div>
                                                                 </div>
-                                                        </div>
-                                                </li>
+                                                        </li>";
+                                                }
+                                                
+                                                ?>
 
                                                 <li>
                                                         <div class="row">
