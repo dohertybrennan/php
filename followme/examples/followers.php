@@ -8,6 +8,13 @@
 if (!isset($_SESSION)) {
         session_start();
 }
+
+require('../../example/dbconnection.php');
+        $self_id = $_SESSION['user_id'];
+
+        $sql = "SELECT * FROM fm_users WHERE user_id <> $self_id";
+        $result = $conn->query($sql);
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -73,11 +80,6 @@ if (!isset($_SESSION)) {
                                 <div class="col-md-6 ml-auto mr-auto">
                                         <ul class="list-unstyled follows">
                                                 <?php
-                                                require('../../example/dbconnection.php');
-                                                $self_id = $_SESSION['user_id'];
-
-                                                $sql = "SELECT * FROM fm_users WHERE user_id <> $self_id";
-                                                $result = $conn->query($sql);
 
                                                 while ($row = $result->fetch_assoc()) {
                                                         $first_name = $row['first_name'];
