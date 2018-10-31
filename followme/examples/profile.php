@@ -22,7 +22,11 @@ $sql = "SELECT MAX(user_id) FROM fm_users";
 $max_users = $conn->query($sql);
 
 $sql = "select count(follower) from fm_followers where user_id = $user_id";
-$num_followers = $conn->query($sql);
+$count_followers = $conn->query($sql);
+
+while ($row = $num_followers->fetch_assoc()) {
+    $num_followers[] = $count_followers['count(follower)'];
+}
 
 var_dump($num_followers);
 echo("<br><br>");
@@ -33,6 +37,10 @@ while ($row = $following_result->fetch_assoc()) {
     var_dump($row['follower']);
     echo("<br><br>");
     $following_user_ids[] = $row['follower'];
+}
+
+for ($i=0; $i < ; $i++) { 
+    # code...
 }
 ?>
 <!doctype html>
