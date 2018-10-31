@@ -145,7 +145,7 @@ while ($row = $following_result->fetch_assoc()) {
                                                             <img src=\"$img_url\" alt=\"Circle Image\" class=\"img-circle img-no-padding img-responsive\">
                                                         </div>
                                                         <div class=\"col-md-7 col-sm-4  ml-auto mr-auto\">
-                                                            <h6>$first_name $last_name<br/><small>$title</small></h6>
+                                                            <h6>$first_name<br/><small>$title</small></h6>
                                                         </div>
                                                         <div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">
                                                             <div class=\"form-check\">
