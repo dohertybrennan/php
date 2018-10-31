@@ -154,7 +154,7 @@ $num_followers = $conn->query($sql);
                                                         </div>
                                                     </div>
                                                 </li>
-                                                <hr />"
+                                                <hr />";
                                         }
                                     }
                                     ?>
