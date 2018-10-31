@@ -25,11 +25,11 @@ $max_users = $conn->query($sql);
 $sql = "select count(follower) from fm_followers where user_id = $user_id";
 $num_followers = $conn->query($sql);
 
-while ($row = $following_result->fetch_assoc()) {
+/*while ($row = $following_result->fetch_assoc()) {
     for ($i=0; $i < $num_followers; $i++) { 
         $following_user_ids[$i] = $row['follower'];
     }
-}
+}*/
 ?>
 <!doctype html>
 <html lang="en">
