@@ -125,7 +125,7 @@ $num_followers = $conn->query($sql);
                             <div class="col-md-6 ml-auto mr-auto">
                                 <ul class="list-unstyled follows">
                                     <?php
-
+                                    /*
                                     for ($i=0; $i < $num_followers; $i++) { 
                                         $current_user = $following_user_ids[$i];
                                         $sql = "SELECT * FROM fm_users WHERE user_id = $current_user";
@@ -156,7 +156,7 @@ $num_followers = $conn->query($sql);
                                                 </li>
                                                 <hr />";
                                         }
-                                    }
+                                    }*/
                                     ?>
                                     <li>
                                         <div class="row">
