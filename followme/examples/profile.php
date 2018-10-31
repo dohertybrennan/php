@@ -139,10 +139,11 @@ while ($row = $following_result->fetch_assoc()) {
                                         var_dump($current_user);
 
                                         while ($row = $result->fetch_assoc()) {
-                                            /*$img_url = $row['img_url'];
+                                            $img_url = $row['img_url'];
                                             $first_name = $row['first_name'];
                                             $last_name = $row['last_name'];
                                             $title = $row['title'];
+                                            /*
                                             echo "<li>
                                                     <div class=\"row\">
                                                         <div class=\"col-md-2 col-sm-2 ml-auto mr-auto\">
