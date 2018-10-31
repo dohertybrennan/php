@@ -17,9 +17,6 @@ $result = $conn->query($sql);
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
 $following_result = $conn->query($sql);
-echo($user_id);
-var_dump($user_id);
-
 
 $sql = "SELECT MAX(user_id) FROM fm_users";
 $max_users = $conn->query($sql);
