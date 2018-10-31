@@ -28,6 +28,9 @@ $num_followers = $conn->query($sql);
 var_dump($num_followers);
 var_dump($following_result);
 
+echo($num_followers);
+echo($following_result);
+
 /*while ($row = $following_result->fetch_assoc()) {
     for ($i=0; $i < $num_followers; $i++) { 
         $following_user_ids[$i] = $row['follower'];
