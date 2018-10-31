@@ -179,10 +179,10 @@ while ($row = $following_result->fetch_assoc()) {
                     </div>
                     <div class="tab-pane text-center" id="following" role="tabpanel">
                         <?php
-                        if () {
+                        if ($num_following == 0) {
                             echo "<h3 class=\"text-muted\">Not following anyone yet :(</h3>";
                         } else {
-                            for ($i=0; $i < $num_followers; $i++) { 
+                            for ($i=0; $i < $num_following; $i++) { 
                                 $current_user = $following_user_ids[$i];
                                 $sql = "SELECT * FROM fm_users WHERE user_id =". $following_user_ids[$i];
                                 $result = $conn->query($sql);
