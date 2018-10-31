@@ -24,6 +24,7 @@ $max_users = $conn->query($sql);
 $sql = "select count(follower) from fm_followers where user_id = $user_id";
 $num_followers = $conn->query($sql);
 
+
 var_dump($num_followers);
 echo("<br><br>");
 var_dump($following_result);
