@@ -138,7 +138,7 @@ while ($row = $following_result->fetch_assoc()) {
                                         echo($following_user_ids[$i]);
                                         var_dump($current_user);
 
-                                        /*while ($row = $result->fetch_assoc()) {
+                                        while ($row = $result->fetch_assoc()) {
                                             $img_url = $row['img_url'];
                                             $first_name = $row['first_name'];
                                             $last_name = $row['last_name'];
@@ -162,7 +162,7 @@ while ($row = $following_result->fetch_assoc()) {
                                                     </div>
                                                 </li>
                                                 <hr />";
-                                        }*/
+                                        }
                                     }
                                     ?>
                                     <li>
