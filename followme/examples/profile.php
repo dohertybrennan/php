@@ -132,7 +132,7 @@ while ($row = $following_result->fetch_assoc()) {
                                         $sql = "SELECT * FROM fm_users WHERE user_id = $current_user";
                                         $result = $conn->query($sql);
 
-                                        while ($row = $result->fetch_assoc()) {
+                                        /*while ($row = $result->fetch_assoc()) {
                                             $img_url = $row['img_url'];
                                             $first_name = $row['first_name'];
                                             $last_name = $row['last_name'];
@@ -156,7 +156,7 @@ while ($row = $following_result->fetch_assoc()) {
                                                     </div>
                                                 </li>
                                                 <hr />";
-                                        }
+                                        }*/
                                     }
                                     ?>
                                     <li>
