@@ -17,11 +17,11 @@ $result = $conn->query($sql);
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
 $following_result = $conn->query($sql);
-/*
+
 while ($row = $following_result->fetch_row()) {
     $following_user_ids[] = $row[0];
 }
-
+/*
 $sql = "SELECT MAX(user_id) FROM fm_users";
 $max_users = $conn->query($sql);
 
