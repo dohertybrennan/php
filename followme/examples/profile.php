@@ -29,8 +29,6 @@ while ($row = $count_followers->fetch_row()) {
 }
 
 while ($row = $following_result->fetch_assoc()) {
-    var_dump($row['follower']);
-    echo("<br><br>");
     $following_user_ids[] = $row['follower'];
 }
 
@@ -135,15 +133,12 @@ while ($row = $following_result->fetch_assoc()) {
                                         $current_user = $following_user_ids[$i];
                                         $sql = "SELECT * FROM fm_users WHERE user_id =". $following_user_ids[$i];
                                         $result = $conn->query($sql);
-                                        echo($following_user_ids[$i]);
-                                        var_dump($current_user);
 
                                         while ($row = $result->fetch_assoc()) {
                                             $img_url = $row['img_url'];
                                             $first_name = $row['first_name'];
                                             $last_name = $row['last_name'];
                                             $title = $row['title'];
-                                            var_dump($row);
                                             
                                             echo "<li>
                                                     <div class=\"row\">
