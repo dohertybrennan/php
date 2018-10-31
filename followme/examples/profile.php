@@ -132,6 +132,7 @@ while ($row = $following_result->fetch_assoc()) {
                                         $sql = "SELECT * FROM fm_users WHERE user_id = $current_user";
                                         $result = $conn->query($sql);
                                         echo($current_user);
+                                        var_dump($current_user);
 
                                         /*while ($row = $result->fetch_assoc()) {
                                             $img_url = $row['img_url'];
