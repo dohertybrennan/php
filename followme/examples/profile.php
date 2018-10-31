@@ -131,7 +131,7 @@ while ($row = $following_result->fetch_assoc()) {
                                         $current_user = $following_user_ids[$i];
                                         $sql = "SELECT * FROM fm_users WHERE user_id = $current_user";
                                         $result = $conn->query($sql);
-                                        echo($current_user);
+                                        echo($following_user_ids[$i]);
                                         var_dump($current_user);
 
                                         /*while ($row = $result->fetch_assoc()) {
