@@ -22,7 +22,7 @@ $sql = "SELECT MAX(user_id) FROM fm_users";
 $max_users = $conn->query($sql);
 
 $sql = "select count(follower) from fm_followers where user_id = $user_id";
-$count_followers = $conn->query($sql);
+$num_followers = $conn->query($sql);
 
 while ($row = $following_result->fetch_assoc()) {
     var_dump($row['follower']);
