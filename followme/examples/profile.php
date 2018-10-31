@@ -16,7 +16,7 @@ $result = $conn->query($sql);
 
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
-$following_result = $conn->query($sql);
+$follower_result = $conn->query($sql);
 
 $sql = "SELECT MAX(user_id) FROM fm_users";
 $max_users = $conn->query($sql);
@@ -28,8 +28,8 @@ while ($row = $count_followers->fetch_row()) {
     $num_followers = $row[0];
 }
 
-while ($row = $following_result->fetch_assoc()) {
-    $following_user_ids[] = $row['follower'];
+while ($row = $follower_result->fetch_assoc()) {
+    $follower_user_ids[] = $row['follower'];
 }
 
 ?>
@@ -130,8 +130,8 @@ while ($row = $following_result->fetch_assoc()) {
                                 <ul class="list-unstyled follows">
                                     <?php
                                     for ($i=0; $i < $num_followers; $i++) { 
-                                        $current_user = $following_user_ids[$i];
-                                        $sql = "SELECT * FROM fm_users WHERE user_id =". $following_user_ids[$i];
+                                        $current_user = $follower_user_ids[$i];
+                                        $sql = "SELECT * FROM fm_users WHERE user_id =". $follower_user_ids[$i];
                                         $result = $conn->query($sql);
 
                                         while ($row = $result->fetch_assoc()) {
