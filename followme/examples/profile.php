@@ -18,16 +18,18 @@ $user_id = $_SESSION['user_id'];
 $sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
 $following_result = $conn->query($sql);
 
-while ($row = $following_result->fetch_assoc()) {
-    $following_user_ids[] = $row['follower'];
-}
-/*
+
 $sql = "SELECT MAX(user_id) FROM fm_users";
 $max_users = $conn->query($sql);
 
-$sql = "select count(follower) from fm_followers where user_id = 1";
+$sql = "select count(follower) from fm_followers where user_id = $user_id";
 $num_followers = $conn->query($sql);
-*/
+
+while ($row = $following_result->fetch_assoc()) {
+    for ($i=0; $i < $num_followers; $i++) { 
+        $following_user_ids[$i] = $row['follower'];
+    }
+}
 ?>
 <!doctype html>
 <html lang="en">
