@@ -19,7 +19,7 @@ $sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
 $following_result = $conn->query($sql);
 
 while ($row = $following_result->fetch_assoc()) {
-    $following_user_ids[] = $row[0];
+    $following_user_ids[] = $row;
 }
 /*
 $sql = "SELECT MAX(user_id) FROM fm_users";
