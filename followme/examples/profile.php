@@ -20,6 +20,7 @@ $following_result = $conn->query($sql);
 echo($user_id);
 var_dump($user_id);
 
+
 $sql = "SELECT MAX(user_id) FROM fm_users";
 $max_users = $conn->query($sql);
 

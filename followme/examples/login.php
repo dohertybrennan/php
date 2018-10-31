@@ -17,7 +17,7 @@
 
     $invalidLogin = "This is an invalid login. This incident will be reported.";
 
-    $sql = "SELECT username, password, img_url, first_name, last_name, title, description FROM fm_users WHERE username = '$username'";
+    $sql = "SELECT * FROM fm_users WHERE username = '$username'";
     $result = $conn->query($sql);
 
     while($row = $result->fetch_assoc()) {
