@@ -8,7 +8,7 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-/*
+
 require('../../example/dbconnection.php');
 
 $sql = "SELECT * FROM fm_users";
@@ -17,7 +17,7 @@ $result = $conn->query($sql);
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
 $following_result = $conn->query($sql);
-
+/*
 while ($row = $following_result->fetch_row()) {
     $following_user_ids[] = $row[0];
 }
