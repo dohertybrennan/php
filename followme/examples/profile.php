@@ -17,6 +17,7 @@ $result = $conn->query($sql);
 $user_id = $_SESSION['user_id'];
 $sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
 $following_result = $conn->query($sql);
+$test1 = $following_result->fetch_assoc();
 
 
 $sql = "SELECT MAX(user_id) FROM fm_users";
@@ -24,12 +25,16 @@ $max_users = $conn->query($sql);
 
 $sql = "select count(follower) from fm_followers where user_id = $user_id";
 $num_followers = $conn->query($sql);
+$test2 = $num_followers->fetch_assoc();
 
 var_dump($num_followers);
 var_dump($following_result);
 
 echo($num_followers);
 echo($following_result);
+
+echo($test1);
+echo($test2);
 
 /*while ($row = $following_result->fetch_assoc()) {
     for ($i=0; $i < $num_followers; $i++) { 
