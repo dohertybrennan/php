@@ -30,7 +30,7 @@ var_dump($following_result);
 echo("<br><br>");
 
 while ($row = $following_result->fetch_assoc()) {
-    var_dump($row[0]);
+    var_dump($row['follower']);
     echo("<br><br>");
 }
 ?>
