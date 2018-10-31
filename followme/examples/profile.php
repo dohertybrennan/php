@@ -9,6 +9,24 @@ if (!isset($_SESSION)) {
     session_start();
 }
 
+require('../../example/dbconnection.php');
+
+$sql = "SELECT * FROM fm_users";
+$result = $conn->query($sql);
+
+$user_id = $_SESSION['user_id'];
+$sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
+$following_result = $conn->query($sql);
+
+while ($row = $following_result->fetch_row()) {
+    $following_user_ids[] = $row[0];
+}
+
+$sql = "SELECT MAX(user_id) FROM fm_users";
+$max_users = $conn->query($sql);
+
+$sql = "select count(follower) from fm_followers where user_id = 1";
+$num_followers = $conn->query($sql);
 
 ?>
 <!doctype html>
@@ -106,6 +124,40 @@ if (!isset($_SESSION)) {
                         <div class="row">
                             <div class="col-md-6 ml-auto mr-auto">
                                 <ul class="list-unstyled follows">
+                                    <?php
+
+                                    for ($i=0; $i < $num_followers; $i++) { 
+                                        $current_user = $following_user_ids[$i];
+                                        $sql = "SELECT * FROM fm_users WHERE user_id = $current_user";
+                                        $result = $conn->query($sql);
+
+                                        while ($row = $result->fetch_assoc()) {
+                                            $img_url = $row['img_url'];
+                                            $first_name = $row['first_name'];
+                                            $last_name = $row['last_name'];
+                                            $title = $row['title'];
+                                            echo "<li>
+                                                    <div class=\"row\">
+                                                        <div class=\"col-md-2 col-sm-2 ml-auto mr-auto\">
+                                                            <img src=\"$img_url\" alt=\"Circle Image\" class=\"img-circle img-no-padding img-responsive\">
+                                                        </div>
+                                                        <div class=\"col-md-7 col-sm-4  ml-auto mr-auto\">
+                                                            <h6>$first_name $last_name<br/><small>$title</small></h6>
+                                                        </div>
+                                                        <div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">
+                                                            <div class=\"form-check\">
+                                                                <label class=\"form-check-label\">
+                                                                    <input class=\"form-check-input\" type=\"checkbox\" value="" checked>
+                                                                    <span class=\"form-check-sign\"></span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <hr />"
+                                        }
+                                    }
+                                    ?>
                                     <li>
                                         <div class="row">
                                             <div class="col-md-2 col-sm-2 ml-auto mr-auto">
