@@ -24,15 +24,6 @@ $max_users = $conn->query($sql);
 $sql = "select count(follower) from fm_followers where user_id = $user_id";
 $count_followers = $conn->query($sql);
 
-while ($orw = $count_followers->fetch_assoc()) {
-    $num_followers[] = $count_followers['count(followers)'];
-}
-
-var_dump($num_followers);
-echo("<br><br>");
-var_dump($following_result);
-echo("<br><br>");
-
 while ($row = $following_result->fetch_assoc()) {
     var_dump($row['follower']);
     echo("<br><br>");
