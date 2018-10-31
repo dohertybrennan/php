@@ -36,9 +36,6 @@ while ($row = $following_result->fetch_assoc()) {
     $following_user_ids[] = $row['follower'];
 }
 
-for ($i=0; $i < ; $i++) { 
-    # code...
-}
 ?>
 <!doctype html>
 <html lang="en">
