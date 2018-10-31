@@ -32,6 +32,7 @@ echo("<br><br>");
 while ($row = $following_result->fetch_assoc()) {
     var_dump($row['follower']);
     echo("<br><br>");
+    $following_user_ids[] = $row['follower'];
 }
 ?>
 <!doctype html>
