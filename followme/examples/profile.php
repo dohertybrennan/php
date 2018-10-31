@@ -132,7 +132,7 @@ while ($row = $following_result->fetch_assoc()) {
                             <div class="col-md-6 ml-auto mr-auto">
                                 <ul class="list-unstyled follows">
                                     <?php
-                                    
+                                    /*
                                     for ($i=0; $i < $num_followers; $i++) { 
                                         $current_user = $following_user_ids[$i];
                                         $sql = "SELECT * FROM fm_users WHERE user_id = $current_user";
@@ -163,7 +163,7 @@ while ($row = $following_result->fetch_assoc()) {
                                                 </li>
                                                 <hr />";
                                         }
-                                    }
+                                    }*/
                                     ?>
                                     <li>
                                         <div class="row">
