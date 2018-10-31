@@ -178,7 +178,44 @@ while ($row = $following_result->fetch_assoc()) {
                         </div>
                     </div>
                     <div class="tab-pane text-center" id="following" role="tabpanel">
-                        <h3 class="text-muted">Not following anyone yet :(</h3>
+                        <?php
+                        if (!$follower_result) {
+                            echo "<h3 class=\"text-muted\">Not following anyone yet :(</h3>";
+                        } else {
+                            for ($i=0; $i < $num_following; $i++) { 
+                                $current_user = $following_user_ids[$i];
+                                $sql = "SELECT * FROM fm_users WHERE user_id =". $following_user_ids[$i];
+                                $result = $conn->query($sql);
+
+                                while ($row = $result->fetch_assoc()) {
+                                    $img_url = $row['img_url'];
+                                    $first_name = $row['first_name'];
+                                    $last_name = $row['last_name'];
+                                    $title = $row['title'];
+                                    
+                                    echo "<li>
+                                            <div class=\"row\">
+                                                <div class=\"col-md-2 col-sm-2 ml-auto mr-auto\">
+                                                    <img src=\"$img_url\" alt=\"Circle Image\" class=\"img-circle img-no-padding img-responsive\">
+                                                </div>
+                                                <div class=\"col-md-7 col-sm-4  ml-auto mr-auto\">
+                                                    <h6>$first_name $last_name<br/><small>$title</small></h6>
+                                                </div>
+                                                <div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">
+                                                    <div class=\"form-check\">
+                                                        <label class=\"form-check-label\">
+                                                            <input class=\"form-check-input\" type=\"checkbox\" value=\"\" checked>
+                                                            <span class=\"form-check-sign\"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <hr />";
+                                }
+                            }
+                        }
+                        ?>
                         <button class="btn btn-warning btn-round">Find artists</button>
                     </div>
                 </div>
