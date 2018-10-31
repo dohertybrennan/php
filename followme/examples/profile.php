@@ -144,7 +144,7 @@ while ($row = $following_result->fetch_assoc()) {
                                             $last_name = $row['last_name'];
                                             $title = $row['title'];
                                             var_dump($row);
-                                            /*
+                                            
                                             echo "<li>
                                                     <div class=\"row\">
                                                         <div class=\"col-md-2 col-sm-2 ml-auto mr-auto\">
@@ -156,14 +156,14 @@ while ($row = $following_result->fetch_assoc()) {
                                                         <div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">
                                                             <div class=\"form-check\">
                                                                 <label class=\"form-check-label\">
-                                                                    <input class=\"form-check-input\" type=\"checkbox\" value="" checked>
+                                                                    <input class=\"form-check-input\" type=\"checkbox\" value=\"\" checked>
                                                                     <span class=\"form-check-sign\"></span>
                                                                 </label>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </li>
-                                                <hr />";*/
+                                                <hr />";
                                         }
                                     }
                                     ?>
