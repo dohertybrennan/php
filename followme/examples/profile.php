@@ -8,7 +8,7 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-
+/*
 require('../../example/dbconnection.php');
 
 $sql = "SELECT * FROM fm_users";
@@ -27,7 +27,7 @@ $max_users = $conn->query($sql);
 
 $sql = "select count(follower) from fm_followers where user_id = 1";
 $num_followers = $conn->query($sql);
-
+*/
 ?>
 <!doctype html>
 <html lang="en">
