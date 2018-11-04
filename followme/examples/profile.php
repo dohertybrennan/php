@@ -44,7 +44,7 @@ while ($row = $following_result->fetch_assoc()) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    var_dump($_POST);
+    echo $POST['3'];
 }
 
 ?>
