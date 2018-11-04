@@ -45,7 +45,9 @@ while ($row = $following_result->fetch_assoc()) {
 
 $i = 0;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    echo $_POST["$i"];
+    foreach ($_POST as $key => $value) {
+        echo $key . $value;
+    }
 }
 
 ?>
