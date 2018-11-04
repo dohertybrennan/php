@@ -139,6 +139,7 @@ while ($row = $following_result->fetch_assoc()) {
                     <div class="tab-pane active" id="follows" role="tabpanel">
                         <div class="row">
                             <div class="col-md-6 ml-auto mr-auto">
+                            <form class='followers' action="" type="post"> 
                                 <ul class="list-unstyled follows">
                                     <?php
                                     for ($i=0; $i < $num_followers; $i++) { 
@@ -176,7 +177,8 @@ while ($row = $following_result->fetch_assoc()) {
                                     }
                                     ?>
                                 </ul>
-                                <button class="btn btn-warning btn-round">Find artists</button>
+                                <button class="btn btn-warning btn-round" type="submit" value="submit">Find artists</button>
+                                </form>
                             </div>
                         </div>
                         
