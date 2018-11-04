@@ -43,6 +43,7 @@ while ($row = $following_result->fetch_assoc()) {
     $following_user_ids[] = $row['user_id'];
 }
 
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -150,6 +151,7 @@ while ($row = $following_result->fetch_assoc()) {
                                             $first_name = $row['first_name'];
                                             $last_name = $row['last_name'];
                                             $title = $row['title'];
+                                            $user_id = $follower_user_ids[$i];
                                             
                                             echo "<li>
                                                     <div class=\"row\">
@@ -162,7 +164,7 @@ while ($row = $following_result->fetch_assoc()) {
                                                         <div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">
                                                             <div class=\"form-check\">
                                                                 <label class=\"form-check-label\">
-                                                                    <input class=\"form-check-input\" type=\"checkbox\" value=\"\" checked>
+                                                                    <input class=\"form-check-input\" type=\"checkbox\" value=\"$user_id\" checked>
                                                                     <span class=\"form-check-sign\"></span>
                                                                 </label>
                                                             </div>
@@ -176,6 +178,7 @@ while ($row = $following_result->fetch_assoc()) {
                                 </ul>
                             </div>
                         </div>
+                        <button class="btn btn-warning btn-round">Find artists</button>
                     </div>
                     <div class="tab-pane text-center" id="following" role="tabpanel">
                         <?php
