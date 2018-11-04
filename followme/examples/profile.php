@@ -43,8 +43,9 @@ while ($row = $following_result->fetch_assoc()) {
     $following_user_ids[] = $row['user_id'];
 }
 
+$i = 0;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    echo $_POST['0'];
+    echo $_POST["$i"];
 }
 
 ?>
