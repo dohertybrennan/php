@@ -61,6 +61,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $sql = "SELECT * FROM fm_users WHERE user_id = $i";
             $bool = $conn->query($sql);
             var_dump($bool);
+
+            $sql = "SELECT * FROM fm_users WHERE user_id = 99";
+            $false = $conn->query($sql);
+            var_dump($false);
         }
     }
 }
