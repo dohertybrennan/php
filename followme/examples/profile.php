@@ -177,8 +177,8 @@ while ($row = $following_result->fetch_assoc()) {
                                     ?>
                                 </ul>
                             </div>
+                            <button class="btn btn-warning btn-round">Find artists</button>
                         </div>
-                        <button class="btn btn-warning btn-round">Find artists</button>
                     </div>
                     <div class="tab-pane text-center" id="following" role="tabpanel">
                         <?php
