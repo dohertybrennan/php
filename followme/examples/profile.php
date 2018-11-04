@@ -43,6 +43,9 @@ while ($row = $following_result->fetch_assoc()) {
     $following_user_ids[] = $row['user_id'];
 }
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    var_dump($_POST);
+}
 
 ?>
 <!doctype html>
