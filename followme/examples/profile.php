@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     foreach ($_POST as $key => $value) {
         $updated_follower_user_ids[] = $value;
     }
-    foreach ($follower_user_ids as $a => $i) {
+    /*foreach ($follower_user_ids as $a => $i) {
         foreach ($updated_follower_user_ids as $b => $j) {
             if ($i == $j) {
                 $match = true;
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             }
         }
 
-        /*if (!$match) {
+        if (!$match) {
             $sql = "SELECT * FROM fm_users WHERE user_id = $i";
             $bool = $conn->query($sql);
             var_dump($bool);
