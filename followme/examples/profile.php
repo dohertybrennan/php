@@ -142,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="tab-pane active" id="follows" role="tabpanel">
                         <div class="row">
                             <div class="col-md-6 ml-auto mr-auto">
-                            <form class='followers' action="" type="POST"> 
+                            <form class='followers' action="" method="POST"> 
                                 <ul class="list-unstyled follows">
                                     <?php
                                     for ($i=0; $i < $num_followers; $i++) { 
