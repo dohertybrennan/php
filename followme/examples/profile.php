@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     foreach ($_POST as $key => $value) {
         $updated_follower_user_ids[] = $value;
     }
-    foreach ($follower_user_id as $a => $i) {
+    foreach ($follower_user_ids as $a => $i) {
         foreach ($updated_follower_user_id as $b => $j) {
             if ($i == $j) {
                 $match = true;
