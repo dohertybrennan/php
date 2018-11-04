@@ -155,7 +155,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                             $first_name = $row['first_name'];
                                             $last_name = $row['last_name'];
                                             $title = $row['title'];
-                                            $user_id = $follower_user_ids[$i];
+                                            $user_id = $row['user_id'];
                                             
                                             echo "<li>
                                                     <div class=\"row\">
