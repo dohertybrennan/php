@@ -43,11 +43,14 @@ while ($row = $following_result->fetch_assoc()) {
     $following_user_ids[] = $row['user_id'];
 }
 
-$i = 0;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     foreach ($_POST as $key => $value) {
-        echo $key . $value;
+        $updated_user_ids[] = $value;
     }
+}
+
+foreach ($updated_user_ids as $key => $value) {
+    echo $value;
 }
 
 ?>
