@@ -60,7 +60,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if (!$match) {
             $sql = "SELECT * FROM fm_users WHERE user_id = $i";
             $bool = $conn->query($sql);
-            echo $bool;
+            while ($row = $bool->fetch_assoc()) {
+                var_dump($row);
+            }
         }
     }
 }
