@@ -69,13 +69,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $insert = $conn-query($sql);
                 }
             }
-            $sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
-            $follower_result = $conn->query($sql);
-            while ($row = $follower_result->fetch_assoc()) {
-                $follower_user_ids[] = $row['follower'];
-            } 
         }
     }
+    $sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
+    $follower_result = $conn->query($sql);
+    while ($row = $follower_result->fetch_assoc()) {
+        $follower_user_ids[] = $row['follower'];
+    } 
 }
 
 ?>
