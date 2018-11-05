@@ -58,15 +58,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         if (!$match) {
-            $sql = "SELECT * FROM fm_users WHERE user_id = $i";
+            $sql = "SELECT exists(select * from fm_followers where user_id = $user_id and follower = $i) as bool";
             $bool = $conn->query($sql);
-            var_dump($bool);
-
-            $sql = "SELECT EXISTS(SELECT * FROM fm_users WHERE user_id = 99) as bool";
-            $false = $conn->query($sql);
-            while ($row = $false->fetch_assoc()) {
-                echo $row['bool'];
+            while ($row = $bool->fetch_assoc()) {
+                if ($row['bool'] == '1') {
+                    $sql = "DELETE FROM fm_followers WHERE user_id = $user_id and follower = $i";
+                    $delete = $conn->query($sql);
+                } else {
+                    $sql = "INSERT INTO fm_followers values ($user_id, $i)";
+                    $insert = $conn-query($sql);
+                }
             }
+            $sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
+            $follower_result = $conn->query($sql);
+            while ($row = $follower_result->fetch_assoc()) {
+                $follower_user_ids[] = $row['follower'];
+            } 
         }
     }
 }
