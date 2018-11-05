@@ -75,7 +75,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $follower_result = $conn->query($sql);
     while ($row = $follower_result->fetch_assoc()) {
         $follower_user_ids[] = $row['follower'];
-    } 
+    }
+    
+    $sql = "select count(follower) from fm_followers where user_id = $user_id";
+    $count_followers = $conn->query($sql);
+    while ($row = $count_followers->fetch_row()) {
+        $num_followers = $row[0];
+    }
 }
 
 ?>
