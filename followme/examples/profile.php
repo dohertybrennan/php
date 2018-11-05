@@ -62,10 +62,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $bool = $conn->query($sql);
             var_dump($bool);
 
-            $sql = "SELECT EXISTS(SELECT * FROM fm_users WHERE user_id = 99)";
+            $sql = "SELECT EXISTS(SELECT * FROM fm_users WHERE user_id = 99) as bool";
             $false = $conn->query($sql);
             while ($row = $false->fetch_assoc()) {
-                var_dump($row);
+                echo $row['bool'];
             }
         }
     }
