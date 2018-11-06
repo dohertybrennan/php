@@ -133,7 +133,7 @@ require('../../example/dbconnection.php');
                                                         $current_user = $follower_user_ids[$i];
                                                         $sql = "SELECT * FROM fm_users WHERE user_id =". $follower_user_ids[$i];
                                                         $result = $conn->query($sql);
-
+                                                
                                                 while ($row = $result->fetch_assoc()) {
                                                         $first_name = $row['first_name'];
                                                         $last_name = $row['last_name'];
@@ -170,7 +170,7 @@ require('../../example/dbconnection.php');
                                                         </li>
                                                         <hr>";
                                                 }
-                                                
+                                                }
                                                 ?>
 
                                                 <li>
