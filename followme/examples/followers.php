@@ -15,6 +15,48 @@ require('../../example/dbconnection.php');
         $sql = "SELECT * FROM fm_users WHERE user_id";
         $result = $conn->query($sql);
 
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                foreach ($_POST as $key => $value) {
+                    $updated_follower_user_ids[] = $value;
+                }
+                foreach ($follower_user_ids as $a => $i) {
+                    foreach ($updated_follower_user_ids as $b => $j) {
+                        if ($i == $j) {
+                            $match = true;
+                            break;
+                        } else {
+                            $match = false;
+                        }
+                    }
+            
+                    if (!$match) {
+                        $sql = "SELECT exists(select * from fm_followers where user_id = $user_id and follower = $i) as bool";
+                        $bool = $conn->query($sql);
+                        while ($row = $bool->fetch_assoc()) {
+                            if ($row['bool'] == '1') {
+                                $sql = "DELETE FROM fm_followers WHERE user_id = $user_id and follower = $i";
+                                $delete = $conn->query($sql);
+                            } else {
+                                $sql = "INSERT INTO fm_followers values ($user_id, $i)";
+                                $insert = $conn-query($sql);
+                            }
+                        }
+                    }
+                }
+                /*$sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
+                $follower_result = $conn->query($sql);
+                while ($row = $follower_result->fetch_assoc()) {
+                    $follower_user_ids[] = $row['follower'];
+                }
+                
+                $sql = "select count(follower) from fm_followers where user_id = $user_id";
+                $count_followers = $conn->query($sql);
+                while ($row = $count_followers->fetch_row()) {
+                    $num_followers = $row[0];
+                }*/
+                header("Location: followers.php");
+            }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -104,7 +146,8 @@ require('../../example/dbconnection.php');
                                                                                 </div>
                                                                         </div>
                                                                 </div>
-                                                        </li>";
+                                                        </li>
+                                                        <hr>";
                                                 }
                                                 
                                                 ?>
