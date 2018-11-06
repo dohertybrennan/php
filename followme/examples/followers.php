@@ -47,10 +47,6 @@ require('../../example/dbconnection.php');
                     $follower_user_ids[] = $row['follower'];
                 }
                 
-                $sql = "select count(follower) from fm_followers where user_id = $user_id";
-                $count_followers = $conn->query($sql);
-                while ($row = $count_followers->fetch_row()) {
-                    $num_followers = $row[0];
                 }*/
                 header("Location: followers.php");
             }
@@ -59,6 +55,12 @@ require('../../example/dbconnection.php');
                 while ($row = $follower_result->fetch_assoc()) {
                     $updated_followers_ids[] = $row['follower'];
                 }
+
+                $sql = "select count(follower) from fm_followers where user_id = $user_id";
+                $count_followers = $conn->query($sql);
+                while ($row = $count_followers->fetch_row()) {
+                    $num_followers = $row[0];
+                
             
         $sql = "SELECT * FROM fm_users WHERE user_id";
         $result = $conn->query($sql);
