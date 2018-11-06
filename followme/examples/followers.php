@@ -188,6 +188,7 @@ require('../../example/dbconnection.php');
                                                 </li>
                                                 <hr />
                                         </ul>
+                                        <button class="btn btn-warning btn-round" type="submit" value="submit">Find artists</button>
                                         </form>
                                 </div>
                         </div>
