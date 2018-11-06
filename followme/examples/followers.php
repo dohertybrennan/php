@@ -157,7 +157,7 @@ require('../../example/dbconnection.php');
                                                                         <div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">
                                                                                 <div class=\"form-check\">
                                                                                         <label class=\"form-check-label\">
-                                                                                                <input class=\"form-check-input\" type=\"checkbox\" value=\"$user_id\" $checked>
+                                                                                                <input class=\"form-check-input\" type=\"checkbox\" value=\"$user_id\" name=\"$i\" $checked>
                                                                                                 <span class=\"form-check-sign\"></span>
                                                                                         </label>
                                                                                 </div>
