@@ -56,7 +56,7 @@ require('../../example/dbconnection.php');
                     $updated_followers_ids[] = $row['follower'];
                 }
 
-                $sql = "select count(follower) from fm_users";
+                $sql = "select count(*) from fm_users";
                 $count_followers = $conn->query($sql);
                 while ($row = $count_followers->fetch_row()) {
                     $num_followers = $row[0];
