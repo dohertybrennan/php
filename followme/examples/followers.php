@@ -15,10 +15,10 @@ require('../../example/dbconnection.php');
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 foreach ($_POST as $key => $value) {
                         echo $value;
-                    $updated_follower_user_ids[] = $value;
+                    $updated_followers_ids[] = $value;
                 }
                 foreach ($follower_user_ids as $a => $i) {
-                    foreach ($updated_follower_user_ids as $b => $j) {
+                    foreach ($updated_followers_ids as $b => $j) {
                         if ($i == $j) {
                             $match = true;
                             break;
