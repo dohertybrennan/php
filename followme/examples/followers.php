@@ -12,9 +12,6 @@ if (!isset($_SESSION)) {
 require('../../example/dbconnection.php');
         //$self_id = $_SESSION['user_id'];
 
-        $sql = "SELECT * FROM fm_users WHERE user_id";
-        $result = $conn->query($sql);
-
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 foreach ($_POST as $key => $value) {
                     $updated_follower_user_ids[] = $value;
@@ -56,6 +53,8 @@ require('../../example/dbconnection.php');
                 }*/
                 header("Location: followers.php");
             }
+        $sql = "SELECT * FROM fm_users WHERE user_id";
+        $result = $conn->query($sql);
 
 ?>
 <!doctype html>
@@ -120,6 +119,7 @@ require('../../example/dbconnection.php');
 
                         <div class="row">
                                 <div class="col-md-6 ml-auto mr-auto">
+                                        <form action="" method="POST">
                                         <ul class="list-unstyled follows">
                                                 <?php
 
@@ -128,6 +128,16 @@ require('../../example/dbconnection.php');
                                                         $last_name = $row['last_name'];
                                                         $img_url = $row['img_url'];
                                                         $title = $row['title'];
+                                                        $user_id = $row['user_id'];
+
+                                                        foreach ($updated_followers_ids as $key => $value) {
+                                                                if ($value == $user_id) {
+                                                                        $checked = "checked";
+                                                                        break;
+                                                                } else {
+                                                                        $checked = " ";
+                                                                }
+                                                        }
 
                                                         echo "<li>
                                                                 <div class=\"row\">
@@ -140,7 +150,7 @@ require('../../example/dbconnection.php');
                                                                         <div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">
                                                                                 <div class=\"form-check\">
                                                                                         <label class=\"form-check-label\">
-                                                                                                <input class=\"form-check-input\" type=\"checkbox\" value=\"\">
+                                                                                                <input class=\"form-check-input\" type=\"checkbox\" value=\"$user_id\" $checked>
                                                                                                 <span class=\"form-check-sign\"></span>
                                                                                         </label>
                                                                                 </div>
@@ -172,6 +182,7 @@ require('../../example/dbconnection.php');
                                                 </li>
                                                 <hr />
                                         </ul>
+                                        </form>
                                 </div>
                         </div>
                 </div>
