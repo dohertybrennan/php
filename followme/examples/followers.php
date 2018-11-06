@@ -60,7 +60,7 @@ require('../../example/dbconnection.php');
                 $count_followers = $conn->query($sql);
                 while ($row = $count_followers->fetch_row()) {
                     $num_followers = $row[0];
-                
+                }
             
         $sql = "SELECT * FROM fm_users WHERE user_id";
         $result = $conn->query($sql);
