@@ -117,7 +117,7 @@ while ($row = $following_result->fetch_assoc()) {
                     <div class="col-md-6 ml-auto mr-auto text-center">
                         <p><?php echo $_SESSION['description']; ?> </p>
                         <br />
-                        <btn class="btn btn-outline-default btn-round" onclick="window.location='./editprofile.php';"><i class="fa fa-cog"></i> Settings</btn>
+                        <btn class="btn btn-outline-default btn-round" onclick="window.location='./editprofile.php';"><i class="fa fa-cog"></i> Edit Profile</btn>
                     </div>
                 </div>
                 <br/>
