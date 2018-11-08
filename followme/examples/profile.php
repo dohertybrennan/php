@@ -135,7 +135,7 @@ while ($row = $following_result->fetch_assoc()) {
                 </div>
                 <!-- Tab panes -->
                 <div class="tab-content following">
-                    <div class="tab-pane active" id="follows" role="tabpanel">
+                    <div class="tab-pane active" id="following" role="tabpanel">
                         <div class="row">
                             <div class="col-md-6 ml-auto mr-auto">
                             <form class='followers' action="" method="POST"> 
@@ -182,7 +182,7 @@ while ($row = $following_result->fetch_assoc()) {
                         </div>
                         
                     </div>
-                    <div class="tab-pane text-center" id="following" role="tabpanel">
+                    <div class="tab-pane text-center" id="follows" role="tabpanel">
                         <?php
                         if ($num_following == 0) {
                             echo "<h3 class=\"text-muted\">Not following anyone yet :(</h3>";
