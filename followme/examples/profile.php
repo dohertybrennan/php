@@ -125,10 +125,10 @@ while ($row = $following_result->fetch_assoc()) {
                     <div class="nav-tabs-wrapper">
                         <ul class="nav nav-tabs" role="tablist">
                             <li class="nav-item">
-                                <a class="nav-link active" data-toggle="tab" href="#follows" role="tab">Follows</a>
+                                <a class="nav-link" data-toggle="tab" href="#following" role="tab">Follows</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" data-toggle="tab" href="#following" role="tab">Following</a>
+                                <a class="nav-link active" data-toggle="tab" href="#follows" role="tab">Following</a>
                             </li>
                         </ul>
                     </div>
@@ -221,7 +221,7 @@ while ($row = $following_result->fetch_assoc()) {
                             }
                         }
                         ?>
-                        <button class="btn btn-warning btn-round">Find artists</button>
+                        <button class="btn btn-warning btn-round">Find People</button>
                     </div>
                 </div>
             </div>
@@ -239,7 +239,7 @@ while ($row = $following_result->fetch_assoc()) {
                 </nav>
                 <div class="credits ml-auto">
                     <span class="copyright">
-                        © <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
+                        © <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by Breenard
                     </span>
                 </div>
             </div>
