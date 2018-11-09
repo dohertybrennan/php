@@ -10,7 +10,7 @@ if (!isset($_SESSION)) {
 }
 
 require('../../example/dbconnection.php');
-        $self_id = $_SESSION['user_id'];
+        $user_id = $_SESSION['user_id'];
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 foreach ($_POST as $key => $value) {
@@ -50,7 +50,7 @@ require('../../example/dbconnection.php');
                 }*/
                 header("Location: profile.php");
             }
-                $sql = "SELECT follower from fm_followers WHERE user_id = $self_id";
+                $sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
                 $follower_result = $conn->query($sql);
                 while ($row = $follower_result->fetch_assoc()) {
                     $updated_followers_ids[] = $row['follower'];
