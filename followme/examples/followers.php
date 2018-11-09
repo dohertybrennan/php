@@ -48,7 +48,7 @@ require('../../example/dbconnection.php');
                 }
                 
                 }*/
-                header("Location: followers.php");
+                header("Location: profile.php");
             }
                 $sql = "SELECT follower from fm_followers WHERE user_id = $self_id";
                 $follower_result = $conn->query($sql);
