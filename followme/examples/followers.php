@@ -31,6 +31,7 @@ require('../../example/dbconnection.php');
                         $sql = "SELECT exists(select * from fm_followers where user_id = $user_id and follower = $i) as bool";
                         $bool = $conn->query($sql);
                         while ($row = $bool->fetch_assoc()) {
+                        var_dump($row);
                             if ($row['bool'] == '1') {
                                 $sql = "DELETE FROM fm_followers WHERE user_id = $user_id and follower = $i";
                                 $conn->query($sql);
@@ -48,7 +49,7 @@ require('../../example/dbconnection.php');
                 }
                 
                 }*/
-                header("Location: profile.php");
+                //header("Location: profile.php");
             }
                 $sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
                 $follower_result = $conn->query($sql);
