@@ -13,6 +13,7 @@ require('../../example/dbconnection.php');
         $user_id = $_SESSION['user_id'];
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+                var_dump($_POST);
                 foreach ($_POST as $key => $value) {
                         echo $value;
                     $updated_followers_ids[] = $value;
