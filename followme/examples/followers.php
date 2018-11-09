@@ -133,7 +133,7 @@ require('../../example/dbconnection.php');
                                         <form action="" method="POST">
                                         <ul class="list-unstyled follows">
                                                 <?php
-                                                for ($i=0; $i < $num_followers; $i++) { 
+                                                 
                                                         
                                                 
                                                 while ($row = $result->fetch_assoc()) {
@@ -163,7 +163,7 @@ require('../../example/dbconnection.php');
                                                                         <div class=\"col-md-3 col-sm-2  ml-auto mr-auto\">
                                                                                 <div class=\"form-check\">
                                                                                         <label class=\"form-check-label\">
-                                                                                                <input class=\"form-check-input\" type=\"checkbox\" value=\"$user_id\" name=\"$i\" $checked>
+                                                                                                <input class=\"form-check-input\" type=\"checkbox\" value=\"$user_id\" name=\"$user_id\" $checked>
                                                                                                 <span class=\"form-check-sign\"></span>
                                                                                         </label>
                                                                                 </div>
@@ -172,7 +172,7 @@ require('../../example/dbconnection.php');
                                                         </li>
                                                         <hr>";
                                                 }
-                                                }
+                                                
                                                 ?>
 
                                                 <!--<li>
