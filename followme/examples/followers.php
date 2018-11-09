@@ -36,7 +36,7 @@ require('../../example/dbconnection.php');
                                 $delete = $conn->query($sql);
                             } else {
                                 $sql = "INSERT INTO fm_followers values ($user_id, $i)";
-                                $insert = $conn-query($sql);
+                                $insert = $conn->query($sql);
                             }
                         }
                     }
