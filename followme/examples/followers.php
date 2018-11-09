@@ -33,10 +33,10 @@ require('../../example/dbconnection.php');
                         while ($row = $bool->fetch_assoc()) {
                             if ($row['bool'] == '1') {
                                 $sql = "DELETE FROM fm_followers WHERE user_id = $user_id and follower = $i";
-                                $delete = $conn->query($sql);
+                                $conn->query($sql);
                             } else {
                                 $sql = "INSERT INTO fm_followers values ($user_id, $i)";
-                                $insert = $conn->query($sql);
+                                $conn->query($sql);
                             }
                         }
                     }
