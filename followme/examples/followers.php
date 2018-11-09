@@ -55,7 +55,7 @@ require('../../example/dbconnection.php');
                 $sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
                 $follower_result = $conn->query($sql);
                 while ($row = $follower_result->fetch_assoc()) {
-                    $updated_followers_ids[] = $row['follower'];
+                        $follower_user_ids[] = $row['follower'];
                 }
 
                 $sql = "select count(*) from fm_users";
@@ -143,7 +143,7 @@ require('../../example/dbconnection.php');
                                                         $title = $row['title'];
                                                         $user_id = $row['user_id'];
 
-                                                        foreach ($updated_followers_ids as $key => $value) {
+                                                        foreach ($follower_user_ids as $key => $value) {
                                                                 if ($value == $user_id) {
                                                                         $checked = "checked";
                                                                         break;
