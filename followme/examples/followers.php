@@ -133,7 +133,7 @@ require('../../example/dbconnection.php');
                                                 <?php
                                                 for ($i=0; $i < $num_followers; $i++) { 
                                                         $current_user = $updated_followers_ids[$i];
-                                                        $sql = "SELECT * FROM fm_users WHERE user_id =". $updated_followers_ids[$i];
+                                                        $sql = "SELECT * FROM fm_users";
                                                         $result = $conn->query($sql);
                                                 
                                                 while ($row = $result->fetch_assoc()) {
@@ -175,7 +175,7 @@ require('../../example/dbconnection.php');
                                                 }
                                                 ?>
 
-                                                <li>
+                                                <!--<li>
                                                         <div class="row">
                                                                 <div class="col-md-2 col-sm-2 ml-auto mr-auto">
                                                                         <img src="../assets/img/faces/clem-onojeghuo-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
@@ -193,7 +193,7 @@ require('../../example/dbconnection.php');
                                                                 </div>
                                                         </div>
                                                 </li>
-                                                <hr />
+                                                <hr />-->
                                         </ul>
                                         <button class="btn btn-warning btn-round" type="submit" value="submit">Find artists</button>
                                         </form>
