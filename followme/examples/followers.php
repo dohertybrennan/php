@@ -11,6 +11,11 @@ if (!isset($_SESSION)) {
 
 require('../../example/dbconnection.php');
         $user_id = $_SESSION['user_id'];
+        $sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
+                $follower_result = $conn->query($sql);
+                while ($row = $follower_result->fetch_assoc()) {
+                        $follower_user_ids[] = $row['follower'];
+        }
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 //var_dump($_POST);
@@ -52,11 +57,7 @@ require('../../example/dbconnection.php');
                 }*/
                 header("Location: profile.php");
             }
-                $sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
-                $follower_result = $conn->query($sql);
-                while ($row = $follower_result->fetch_assoc()) {
-                        $follower_user_ids[] = $row['follower'];
-                }
+                
 
                 $sql = "select count(*) from fm_users";
                 $count_followers = $conn->query($sql);
