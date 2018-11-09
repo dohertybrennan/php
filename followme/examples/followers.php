@@ -13,7 +13,7 @@ require('../../example/dbconnection.php');
         $user_id = $_SESSION['user_id'];
 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-                var_dump($_POST);
+                //var_dump($_POST);
                 foreach ($_POST as $key => $value) {
                         echo $value;
                     $updated_followers_ids[] = $value;
@@ -50,7 +50,7 @@ require('../../example/dbconnection.php');
                 }
                 
                 }*/
-                header("Location: profile.php");
+                //header("Location: profile.php");
             }
                 $sql = "SELECT follower from fm_followers WHERE user_id = $user_id";
                 $follower_result = $conn->query($sql);
