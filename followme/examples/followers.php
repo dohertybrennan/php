@@ -31,7 +31,7 @@ require('../../example/dbconnection.php');
                         $sql = "SELECT exists(select * from fm_followers where user_id = $user_id and follower = $i) as bool";
                         $bool = $conn->query($sql);
                         while ($row = $bool->fetch_assoc()) {
-                        echo $row['bool'];
+                        echo $row;
                             if ($row['bool'] == '1') {
                                 $sql = "DELETE FROM fm_followers WHERE user_id = $user_id and follower = $i";
                                 $conn->query($sql);
