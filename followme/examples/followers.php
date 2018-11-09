@@ -132,9 +132,7 @@ require('../../example/dbconnection.php');
                                         <ul class="list-unstyled follows">
                                                 <?php
                                                 for ($i=0; $i < $num_followers; $i++) { 
-                                                        $current_user = $updated_followers_ids[$i];
-                                                        $sql = "SELECT * FROM fm_users";
-                                                        $result = $conn->query($sql);
+                                                        
                                                 
                                                 while ($row = $result->fetch_assoc()) {
                                                         $first_name = $row['first_name'];
