@@ -55,7 +55,7 @@ require('../../example/dbconnection.php');
                 }
                 
                 }*/
-                header("Location: profile.php");
+                //header("Location: profile.php");
             }
                 
 
