@@ -30,9 +30,9 @@ require('../../example/dbconnection.php');
                             break;
                         } else {
                             $match = false;
-                        }
+                        } 
                     }
-            
+                    
                     if (!$match) {
                         $sql = "SELECT exists(select * from fm_followers where user_id = $user_id and follower = $i) as bool";
                         $bool = $conn->query($sql);
