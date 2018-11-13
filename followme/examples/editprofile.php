@@ -32,7 +32,54 @@ if (isset($_POST['submit'])) {
     $description = $_POST['description'];
     $user_id = $_POST['user_id'];
 
-    $sql = "UPDATE fm_users SET username = '$username', first_name = '$first_name', last_name = '$last_name', title = '$title', description = '$description' where user_id = '$user_id' ";
+    if (isset($_FILES['upload'])) {
+        $img_path = "../assets/img/faces/$user_id";
+        //checks to see if uploads directory exists
+        if (!file_exists($img_path)) {
+          mkdir($img_path);
+        }
+    
+        $target_dir = $img_path . "/";
+        $target_file = $target_dir.basename($_FILES['upload']['name']);
+        $uploadVerification = true;
+    
+        if (file_exists($target_file)) {
+          $uploadVerification = false;
+          $ret = "Sorry. File already exists!";
+        }
+    
+        //Check file for type
+        $file_type = $_FILES['upload']['type'];
+    
+        switch ($file_type) {
+          case 'image/jpeg':
+            $uploadVerification = true;
+            break;
+          case 'image/png':
+            $uploadVerification = true;
+            break;
+          case 'image/gif':
+            $uploadVerification = true;
+            break;
+          case 'application/pdf':
+            $uploadVerification = true;
+            break;
+          default:
+            $uploadVerification = false;
+            $ret = "Sorry. Only .jpg, .png, gif, .pdf files are allowed";
+        }
+    
+        if ($_FILES['upload']['size'] > 2000000) {
+          $uploadVerification = false;
+          $ret = "Sorry. File is too big";
+        }
+    
+        if ($uploadVerification) {
+          move_uploaded_file($_FILES['upload']['tmp_name'], $target_file);
+        }
+      }
+
+    $sql = "UPDATE fm_users SET username = '$username', first_name = '$first_name', last_name = '$last_name', title = '$title', description = '$description', img_url = $target_file where user_id = '$user_id' ";
     $conn->query($sql);
     header('Location: profile.php');
     echo "test";
@@ -143,6 +190,8 @@ if (isset($_POST['submit'])) {
                                 </div> <!--Ends first row-->
                                 <label>Description:</label>
                                 <textarea class="form-control" rows="4" placeholder="Tell everyone a little about you..." name="description"><?php echo $_SESSION['description'];?></textarea>
+                                <input type="file" name="upload">
+                                <br>
                                 <div class="row">
                                     <div class="col-md-4 ml-auto mr-auto text-center">
                                         <button class="btn btn-danger btn-lg btn-fill" type="submit" name="submit">Save Changes</button>
