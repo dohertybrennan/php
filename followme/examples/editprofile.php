@@ -30,7 +30,7 @@ if (isset($_POST['submit'])) {
     $last_name = $_POST['last_name'];
     $title = $_POST['title'];
     $description = $_POST['description'];
-    $user_id = $_POST['user_id'];
+    $user_id = $_SESSION['user_id'];
 
     if (isset($_FILES['upload'])) {
         $img_path = "../assets/img/faces/$user_id";
