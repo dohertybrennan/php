@@ -81,7 +81,7 @@ if (isset($_POST['submit'])) {
 
     $sql = "UPDATE fm_users SET username = '$username', first_name = '$first_name', last_name = '$last_name', title = '$title', description = '$description', img_url = '$target_file' where user_id = $user_id ";
     $conn->query($sql);
-    header('Location: profile.php');
+    //header('Location: profile.php');
     echo "test";
 }
 
