@@ -37,10 +37,12 @@ if (isset($_POST['submit'])) {
         //checks to see if uploads directory exists
         if (!file_exists($img_path)) {
           mkdir($img_path);
+          echo "mkdir";
         }
     
         $target_dir = $img_path;
         $target_file = $target_dir.basename($_FILES['upload']['name']);
+        echo $target_file;
         $uploadVerification = true;
     
         if (file_exists($target_file)) {
