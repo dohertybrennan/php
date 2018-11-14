@@ -37,12 +37,10 @@ if (isset($_POST['submit'])) {
         //checks to see if uploads directory exists
         if (!file_exists($img_path)) {
           mkdir($img_path);
-          echo "mkdir";
         }
     
         $target_dir = $img_path;
         $target_file = $target_dir.basename($_FILES['upload']['name']);
-        echo $target_file;
         $uploadVerification = true;
     
         if (file_exists($target_file)) {
@@ -83,7 +81,8 @@ if (isset($_POST['submit'])) {
 
     $sql = "UPDATE fm_users SET username = '$username', first_name = '$first_name', last_name = '$last_name', title = '$title', description = '$description', img_url = '$target_file' where user_id = $user_id ";
     $conn->query($sql);
-    //header('Location: profile.php');
+    $_SESSION['img_url'] = $target_file;
+    header('Location: profile.php');
     echo "test";
 }
 
